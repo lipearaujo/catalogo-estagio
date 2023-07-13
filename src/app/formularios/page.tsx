@@ -4,13 +4,13 @@ import React from 'react'
 
 type Props = {}
 
-const Assistenciais = (props: Props) => {
+const Formularios = (props: Props) => {
   return (
     <div className='flex'>
         <Sidebar />
-        <Main title='Sistemas Assistenciais'>Assistenciais</Main>
+        <Main title='Formulários'>Formulários</Main>    
     </div>
   )
 }
 
-export default Assistenciais
+export default Formularios

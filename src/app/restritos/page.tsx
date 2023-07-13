@@ -4,13 +4,13 @@ import React from 'react'
 
 type Props = {}
 
-const Assistenciais = (props: Props) => {
+const Restritos = (props: Props) => {
   return (
     <div className='flex'>
         <Sidebar />
-        <Main title='Sistemas Assistenciais'>Assistenciais</Main>
+        <Main title='Restritos'>Restritos</Main>
     </div>
   )
 }
 
-export default Assistenciais
+export default Restritos

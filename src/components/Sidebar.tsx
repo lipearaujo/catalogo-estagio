@@ -79,11 +79,12 @@ const routesList = [
     icon: <MdCollectionsBookmark />,
     color: "#263238"
   },
-  { id: "ajuda", 
-    name: "Ajuda", 
-    href: "/ajuda", 
-    icon: <MdHelpCenter />, 
-    color: "#263238" 
+  {
+    id: "ajuda",
+    name: "Ajuda",
+    href: "/ajuda",
+    icon: <MdHelpCenter />,
+    color: "#263238"
   },
 ];
 
@@ -91,15 +92,26 @@ type Props = {}
 
 const Sidebar = (props: Props) => {
   return (
-    <aside className='w-[230px] bg-red-500'>
-        <div>
-            <Link href="/"><Image className='ml-8 mb-20' src={logoHU} width={60} height={60} alt="Logo do HU-UFGD" /></Link>
+    <aside className='w-[230px]'>
+      <nav className="w-full ">
+        <Link href="/"><Image className='ml-4' src={logoHU} width={40} height={40} alt="Logo do HU-UFGD" /></Link>
+        <p className='border-b-[1px] mt-8 mb-8 ml-1 w-11/12 border-[#888888]'></p>
+        <ul className="list-none p-0">
             {routesList.map((route) => (
-                <SidebarItem id={route.id} name={route.name} href={route.href} icon={route.icon} />
-            ))}
-        </div>
+              <SidebarItem id={route.id} name={route.name} href={route.href} icon={route.icon} color={route.color} />
+            ))}   
+        </ul>
+      </nav>
+
+      <p className='border-b-[1px] mt-8 mb-8 ml-1 w-11/12 border-[#888888]'></p>
+      <footer className='flex flex-col items-start gap-2 p-5 text-[14px] rounded-[10px] text-white'>
+        <p className='bg-[#888888] py-1 px-2 rounded'><strong>Seu IP é: 10.18.129.197</strong></p>
+        <p><strong>© Catálogo de Sistemas</strong></p>
+        <p>SETISD/HU-UFGD/Ebserh</p>
+      </footer>
     </aside>
   )
 }
 
 export default Sidebar
+
