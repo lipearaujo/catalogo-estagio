@@ -48,7 +48,7 @@ const Main = ({ children, title }: Props) => {
           </form>
           <nav className="flex gap-6">
             <Link
-              href="/solicitar-alteracao-senha"
+              href="https://servicosti.ebserh.gov.br/#/solicitar-alteracao-senha"
               className="flex gap-1 justify-center items-center"
             >
               <i className="text-2xl">
@@ -58,7 +58,7 @@ const Main = ({ children, title }: Props) => {
             </Link>
 
             <Link
-              href="/lista-de-ramais"
+              href="https://www.gov.br/ebserh/pt-br/hospitais-universitarios/regiao-centro-oeste/hu-ufgd/comunicacao/telefones-uteis"
               className="flex gap-1 justify-center items-center"
             >
               <i className="text-2xl">
