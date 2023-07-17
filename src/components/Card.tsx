@@ -25,7 +25,7 @@ const Card = ({id, text, children }: Props) => {
         <p className=" text-center text-sm">{}</p>
       </div>
 
-      <button className="p-2 mx-auto bg-[#263238] text-white rounded-[99px] w-1/2">MAIS</button>
+      <button className="p-2 mx-auto bg-[#263238] text-white rounded-[99px] w-1/2 hover:bg-[#557180] hover:font-bold">MAIS</button>
     </div>
   );
 };

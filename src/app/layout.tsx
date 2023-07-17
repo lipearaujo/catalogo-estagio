@@ -1,4 +1,7 @@
+"use client";
+
 import './globals.css'
+import { usePathname } from "next/navigation";
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
@@ -14,9 +17,66 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+  const currentRoute = usePathname();
+
+  const changeColor = (route: any) => {
+    let color = '';
+
+    if(route === '/assistenciais') {
+      color = "bg-[#c62828]"
+    }
+    if(route === '/administrativos') {
+      color = "bg-[#558b2f]"
+    }
+    if(route === '/ensino') {
+      color = "bg-[#283593]"
+    }
+    if(route === '/formularios') {
+      color = "bg-[#00695c]"
+    }
+    if(route === '/relatorios') {
+      color = "bg-[#37474f]"
+    }
+    if(route === '/emails-institucionais') {
+      color = "bg-[#0277bd]"
+    }
+    if(route === '/portais') {
+      color = "bg-[#4527a0]"
+    }
+    if(route === '/treino-homologacao') {
+      color = "bg-[#f9a825]"
+    }
+    if(route === '/restritos') {
+      color = "bg-[#263238]"
+    }
+    if(route === '/manuais') {
+      color = "bg-[#263238]"
+    }
+    if(route === '/ajuda') {
+      color = "bg-[#263238]"
+    }
+
+    return color;
+  }
+
+  /* 
+    assisteciais: "bg-[#c62828]"
+    administrativos: "bg-[#558b2f]"
+    ensino: "bg-[#283593]"
+    formularios: "bg-[#00695c]"
+    relatorios: "bg-[#37474f]"
+    emails-inst: "bg-[#0277bd]"
+    portais: "bg-[#4527a0]"
+    trein-homol: "bg-[#f9a825]"
+    restritos: "bg-[#263238]"
+    manuais: "bg-[#263238]"
+    ajuda: "bg-[#263238]"
+  */
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} ${currentRoute ? changeColor(currentRoute) : 'bg-[#263238]'}`}>{children}</body>
     </html>
   )
 }
