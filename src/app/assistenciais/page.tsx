@@ -44,132 +44,154 @@ const imagesSistemasAssistenciais = [
     src: images[0],
     text: "O Aplicativo de Gestão para Hospitais Universitários – AGHU é um sistema de gestão hospitalar com foco no paciente, adotado como padrão para todos os Hospitais Universitários Federais da rede Ebserh. O desenvolvimento do AGHU iniciou em 2009, como parte integrante do Programa Nacional de Reestruturação dos Hospitais Universitários Federais (Rehuf), do Ministério da Educação, destinado à reestruturação e revitalização dos hospitais das universidades federais. É utilizado no HU-UFGD desde 2010.",
     alt: "AGHU",
+    idColor: "text-[#c62828]",
   },
   {
     id: "Farmacia",
     src: images[1],
     text: "Sistemas e documentos utilizados pelo Setor de Farmácia Hospitalar.",
     alt: "Farmacia",
+    idColor: "text-[#c62828]",
   },
   {
     id: "Nutrição",
     src: images[2],
     text: "Identificação de dietas para pacientes e de acompanhantes para refeições.",
     alt: "Nutrição",
+    idColor: "text-[#c62828]",
   },
   {
     id: "SIL - Emissão de Laudos Online",
     src: images[3],
     text: "Links do sistema de informação SIL utilizado pela Unidade de Análises Clínicas e Anatomia Patológica (UACAP) para emissão de laudos de exames laboratoriais (versões LABORATÓRIO, POSTOS e INTRANET).",
     alt: "SIL - Emissão de Laudos Online",
+    idColor: "text-[#c62828]",
   },
   {
     id: "Impressão de Pulseiras",
     src: images[4],
     text: "Sistema desenvolvido para imprimir pulseiras de identificação para os pacientes internados.",
     alt: "Impressão de Pulseiras",
+    idColor: "text-[#c62828]",
   },
   {
     id: "GETS - Manutenção Engenharia Clínica",
     src: images[5],
     text: "Sistema de Gerenciamento de Tecnologia para Saúde (GETS) usado para solicitar manutenção dos equipamentos médicos do HU-UFGD.",
     alt: "GETS - Manutenção Engenharia Clínica",
+    idColor: "text-[#c62828]",
   },
   {
     id: "SGFO",
     src: images[6],
     text: "Sistema Gerenciador de Fichas Obstétricas.",
     alt: "SGFO",
+    idColor: "text-[#c62828]",
   },
   {
     id: "SGSTI",
     src: images[7],
     text: "Sistema Gerenciador de Solicitação de Transferência Interna.",
     alt: "SGSTI",
+    idColor: "text-[#c62828]",
   },
   {
     id: "Sistema UDIMA",
     src: images[8],
     text: "Sistema para realizar a solicitação de exame(s) para a Unidade de Diagnóstico por Imagem.",
     alt: "Sistema UDIMA",
+    idColor: "text-[#c62828]",
   },
   {
     id: "Termos de Consentimento",
     src: images[9],
     text: "Sistema de cadastro de termos de responsabilidade e consentimento.",
     alt: "Termos de Consentimento",
+    idColor: "text-[#c62828]",
   },
   {
     id: "CADSUS Web",
     src: images[10],
     text: "Cadastro Nacional de Usuários do Sistema Único de Saúde (SUS).",
     alt: "CADSUS Web",
+    idColor: "text-[#455A64]",
   },
   {
     id: "Eventos Adversos",
     src: images[11],
     text: "Listagem de eventos Adversos identificados na Unidade de Gestão de Riscos Assistenciais (UGRA) para facilitar a identificação, análise e implementação de ações preventivas pelas unidades.",
     alt: "Eventos Adversos",
+    idColor: "text-[#455A64]",
   },
   {
     id: "Oviyam 2.1",
     src: images[12],
     text: "Sistema usado para visualizar as imagens geradas pela Unidade de Diagnóstico por Imagem.",
     alt: "Oviyam 2.1",
+    idColor: "text-[#455A64]",
   },
   {
     id: "PACS",
     src: images[13],
     text: "Sistema de Comunicação e Arquivamento de Imagens Médicas (voltado aos médicos radiologistas), utilizando a aplicação DCM4CHE.",
     alt: "PACS",
+    idColor: "text-[#455A64]",
   },
   {
     id: "Portal de Regulamentação de Saúde/MS",
     src: images[14],
     text: "Portal de Regulação de Saúde do estado de Mato Grosso do Sul (CORE/MS).",
     alt: "Portal de Regulamentação de Saúde/MS",
+    idColor: "text-[#455A64]",
   },
   {
     id: "Procedimento por CID (APAC/AIH)",
     src: images[15],
     text: "Aplicação do DataSUS para consulta de um código de procedimento a partir de uma determinada CID (Classificação Internacional de Doenças).",
     alt: "Procedimento por CID (APAC/AIH)",
+    idColor: "text-[#455A64]",
   },
   {
     id: "Prontuário Eletrônico SAMU 192 Dourados",
     src: images[16],
     text: "Solicitação do Serviço de Atendimento Móvel de Emergência (SAMU 192) de Dourados/MS.",
     alt: "Prontuário Eletrônico SAMU 192 Dourados",
+    idColor: "text-[#455A64]",
   },
   {
     id: "Revisão de Prontuários",
     src: images[17],
     text: "Sistema utilizado pela Comissão de Revisão de Prontuários para avaliar os prontuários.",
     alt: "Revisão de Prontuários",
+    idColor: "text-[#455A64]",
   },
   {
     id: "SAGH",
     src: images[18],
     text: "O Sistema de Apoio à Gestão - Hotelaria (SAGH) permite o monitoramento em tempo real da situação dos leitos no AGHU, em suas respectivas unidades funcionais, apoiando a gestão na tomada de decisão, além de ser uma ferramenta de comunicação e interação entre os diferentes setores. No SAGH é possível ter uma visão geral da situação dos leitos num determinado momento, de forma rápida e intuitiva para os usuários. Com isso, os gestores podem tomar decisões com maior agilidade, respaldos em informações confiáveis e a partir de uma única fonte de dados, no caso, o Sistema AGHU.",
     alt: "SAGH",
+    idColor: "text-[#455A64]",
   },
   {
     id: "SIGTAP",
     src: images[19],
     text: "Sistema de Gerenciamento da Tabela de Procedimentos, Medicamentos e OPM (Órtese, Prótese e Materiais) do SUS.",
     alt: "SIGTAP",
+    idColor: "text-[#455A64]",
   },
   {
     id: "SISREG",
     src: images[20],
     text: "Sistema online, criado para o gerenciamento de todo complexo regulatório indo da rede básica à internação hospitalar, visando a humanização dos serviços, maior controle do fluxo e otimização na utilização dos recursos.",
     alt: "SISREG",
+    idColor: "text-[#455A64]",
   },
   {
     id: "VigiHosp",
     src: images[21],
     text: "Gestão de Riscos e Segurança do Paciente, utilizado para notificação de incidentes e queixas técnicas.",
     alt: "VigiHosp",
+    idColor: "text-[#455A64]",
   },
 
 ];
@@ -184,7 +206,7 @@ const Assistenciais = (props: Props) => {
         <div className="flex flex-wrap justify-center gap-5  px-8">
           {imagesSistemasAssistenciais.map((image) => (
             <Link href="">
-              <Card id={image.id}  text={image.text}>
+              <Card id={image.id}  text={image.text} idColor={image.idColor}>
                 <Image src={image.src} width={230} height={120} alt={image.alt}/>
               </Card>
             </Link>

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { MdPassword } from "react-icons/md";
 import { ImPhone } from "react-icons/im";
 import { HiSearch } from "react-icons/hi";
+import { RiLockPasswordFill } from "react-icons/ri"
 
 type Props = {
   title: string;
@@ -47,29 +48,29 @@ const Main = ({ children, title }: Props) => {
             </i>
           </form>
           <nav className="flex gap-6">
-            <Link
-              href="https://servicosti.ebserh.gov.br/#/solicitar-alteracao-senha"
-              className="flex gap-1 justify-center items-center"
-            >
-              <i className="text-2xl">
-                <MdPassword />
-              </i>
-              <span>Esqueci minha senha</span>
-            </Link>
-
-            <Link
+          <Link
               href="https://www.gov.br/ebserh/pt-br/hospitais-universitarios/regiao-centro-oeste/hu-ufgd/comunicacao/telefones-uteis"
               className="flex gap-1 justify-center items-center"
+              title="Lista de Ramais"
             >
               <i className="text-2xl">
                 <ImPhone />
               </i>
-              <span>Lista de Ramais</span>
+            </Link>
+            
+            <Link
+              href="https://servicosti.ebserh.gov.br/#/solicitar-alteracao-senha"
+              className="flex gap-1 justify-center items-center"
+              title="Esqueci minha senha"
+            >
+              <i className="text-2xl">
+                <RiLockPasswordFill />
+              </i>
             </Link>
           </nav>
         </div>
       </header>
-      <p className="border-b-[1px] mt-[18px] mb-8 ml-1 w-full border-[#888888]"></p>
+      <p className="border-b-[1px] mt-[18px] mb-8 ml-1 w-full border-[#888888] opacity-10"></p>
       {children}
     </main>
   );

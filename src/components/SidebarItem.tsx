@@ -9,17 +9,17 @@ type Props = {
   name: string;
   href: string;
   icon: any;
-  //color: string;
+  color: string;
   tooltip: string;
 };
 
-const SidebarItem = ({ id, name, href, icon, tooltip }: Props) => {
+const SidebarItem = ({ id, name, href, icon, color, tooltip }: Props) => {
   const currentRoute = usePathname();
   const linkStyle = `w-full text-white tracking-wide flex py-3 pr-[1.25rem] text-sm justify-center items-center gap-8 text-center hover:opacity-75 hover:text-black hover:font-bold  hover:rounded-l-[9999px] hover:bg-[#ccc] ease-in-out duration-200`;
   const activeLinkStyle = `w-full tracking-wide flex py-3 pr-[1.25rem] text-sm justify-center items-center gap-8 text-center text-[#000] font-bold rounded-l-[9999px] bg-[#F1F5F9] ease-in-out duration-200`;
 
   return (
-    <li id={id} key={name} className="mt-2">
+    <li id={id} key={name} className="mt-2 h-[50px]">
       <Link
         href={href}
         className={currentRoute === href ? activeLinkStyle : linkStyle}
@@ -28,7 +28,16 @@ const SidebarItem = ({ id, name, href, icon, tooltip }: Props) => {
         <i className="text-2xl">{icon}</i>
         <p className="w-28 text-left">{name}</p>
       </Link>
-      {/* <div className="w-[30px] py-3 relative top-[-48px] right-[-200px] bg-red-500">...</div> */}
+       {currentRoute === href ? ((      
+        <>
+          <div className="w-[3rem] py-3 relative top-[-71px] right-[-200px] rounded-br-[999px] bg-[#f1f5f9]"></div> 
+          <div className={`w-[3rem] py-3 relative top-[-96px] right-[-182px] rounded-br-[999px] ${color}`}></div>
+          <div className="w-[3rem] py-3 relative top-[-49px] right-[-200px] rounded-tr-[999px] bg-[#f1f5f9]"></div> 
+          <div className={`w-[3rem] py-3 relative top-[-72px] right-[-182px] rounded-tr-[999px] ${color}`}></div>
+        </> )) : 
+        ('')
+       }
+
     </li>
   );
 };

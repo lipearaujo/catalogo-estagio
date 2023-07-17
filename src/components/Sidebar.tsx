@@ -20,7 +20,7 @@ const routesList = [
     name: "Assistenciais",
     href: "/assistenciais",
     icon: <GiMedicalPack />,
-    //color: "bg-[#c62828]",
+    color: "bg-[#c62828]",
     tooltip: "Sistemas utilizados pela área assistencial",
   },
   {
@@ -28,7 +28,7 @@ const routesList = [
     name: "Administrativos",
     href: "/administrativos",
     icon: <FaSuitcase />,
-    //color: "bg-[#558b2f]",
+    color: "bg-[#558b2f]",
     tooltip: "Sistemas utilizados pela área administrativa",
   },
   {
@@ -36,7 +36,7 @@ const routesList = [
     name: "Ensino",
     href: "/ensino",
     icon: <RiGraduationCapFill />,
-    //color: "bg-[#283593]",
+    color: "bg-[#283593]",
     tooltip: "Sistemas voltados às áreas de ensino e pesquisa",
   },
   {
@@ -44,7 +44,7 @@ const routesList = [
     name: "Formulários",
     href: "/formularios",
     icon: <PiClipboardTextFill />,
-    //color: "bg-[#00695c]",
+    color: "bg-[#00695c]",
     tooltip: "Acesso a alguns formulários",
   },
   {
@@ -52,7 +52,7 @@ const routesList = [
     name: "Relatórios",
     href: "/relatorios",
     icon: <BiSolidReport />,
-    //color: "bg-[#37474f]",
+    color: "bg-[#37474f]",
     tooltip: "Sistemas usados para a geração de relatórios",
   },
   {
@@ -60,7 +60,7 @@ const routesList = [
     name: "E-mails Inst.",
     href: "/emails-institucionais",
     icon: <MdEmail />,
-    //color: "bg-[#0277bd]",
+    color: "bg-[#0277bd]",
     tooltip: "Acesso aos e-mails institucionais",
   },
   {
@@ -68,7 +68,7 @@ const routesList = [
     name: "Portais",
     href: "/portais",
     icon: <FaNewspaper />,
-    //color: "bg-[#4527a0]",
+    color: "bg-[#4527a0]",
     tooltip: "Portais institucionais informativos",
   },
   {
@@ -76,16 +76,15 @@ const routesList = [
     name: "Trein. e Homol.",
     href: "/treino-homologacao",
     icon: <PiNotebookFill />,
-    //color: "bg-[#f9a825]",
-    tooltip:
-      "Ambiente de treinamento e homologação dos sistemas em implantação",
+    color: "bg-[#f9a825]",
+    tooltip: "Ambiente de treinamento e homologação dos sistemas em implantação",
   },
   {
     id: "restritos",
     name: "Restritos",
     href: "/restritos",
     icon: <SiSpringsecurity />,
-    //color: "bg-[#263238]",
+    color: "bg-[#263238]",
     tooltip: "Sistemas restritos ao SGPTI",
   },
   {
@@ -93,7 +92,7 @@ const routesList = [
     name: "Manuais",
     href: "/manuais",
     icon: <MdCollectionsBookmark />,
-    //color: "bg-[#263238]",
+    color: "bg-[#263238]",
     tooltip: "Manuais dos sistemas utilizados no HU-UFGD",
   },
   {
@@ -101,7 +100,7 @@ const routesList = [
     name: "Ajuda",
     href: "/ajuda",
     icon: <MdHelpCenter />,
-    //color: "bg-[#263238]",
+    color: "bg-[#263238]",
     tooltip: "Ajuda e sobre o Catálogo de Sistemas",
   },
 ];
@@ -121,7 +120,7 @@ const Sidebar = (props: Props) => {
             alt="Logo do HU-UFGD"
           />
         </Link>
-        <p className="border-b-[1px] mt-8 mb-8 ml-1 w-11/12 border-[#888888]"></p>
+        <p className="border-b-[1px] mt-8 mb-8 ml-1 w-11/12 border-[#ccc] opacity-10"></p>
         <ul className="list-none p-0">
           {routesList.map((route) => (
             <SidebarItem
@@ -129,15 +128,16 @@ const Sidebar = (props: Props) => {
               name={route.name}
               href={route.href}
               icon={route.icon}
+              color={route.color}
               tooltip={route.tooltip}
             />
           ))}
         </ul>
       </nav>
 
-      <p className="border-b-[1px] mt-8 mb-8 ml-1 w-11/12 border-[#888888]"></p>
+      <p className="border-b-[1px] mt-8 mb-8 ml-1 w-11/12 border-[#ccc] opacity-10"></p>
       <footer className="flex flex-col items-start gap-2 px-5 text-[14px] rounded-[10px] text-white">
-        <p className="bg-[#888888] py-1 px-2 rounded">
+        <p className="">
           <strong>Seu IP é: 10.18.129.197</strong>
         </p>
         <p>
