@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-import { MdPassword } from "react-icons/md";
 import { ImPhone } from "react-icons/im";
 import { HiSearch } from "react-icons/hi";
 import { RiLockPasswordFill } from "react-icons/ri"
@@ -26,9 +25,9 @@ const Main = ({ children, title }: Props) => {
   };
 
   return (
-    <main className="rounded-[30px] bg-[#F1F5F9] w-full flex-1 p-5">
+    <main className="rounded-[30px] bg-[#F1F5F9] w-full flex-1 px-5 py-7">
       <header className="flex justify-between items-center">
-        <p>{title}</p>
+        <h1 className="text-[24px]">{title}</h1>
         <div className="flex">
           <form action="" className="flex justify-center items-center">
             <input
@@ -70,7 +69,7 @@ const Main = ({ children, title }: Props) => {
           </nav>
         </div>
       </header>
-      <p className="border-b-[1px] mt-[18px] mb-8 ml-1 w-full border-[#888888] opacity-10"></p>
+      <p className="border-b-[1px] mt-[18px] mb-[25px] ml-1 w-full border-[#888888] opacity-10"></p>
       {children}
     </main>
   );

@@ -111,16 +111,15 @@ const Sidebar = (props: Props) => {
   return (
     <aside className="w-[230px]">
       <nav className="w-full">
-        <Link href="/" title="Página inicial">
+        <Link href="/" title="Página inicial" className="flex items-center justify-center">
           <Image
-            className="ml-4 mt-4"
             src={logoHU}
-            width={40}
-            height={40}
+            width={80}
+            height={80}
             alt="Logo do HU-UFGD"
           />
         </Link>
-        <p className="border-b-[1px] mt-8 mb-8 ml-1 w-11/12 border-[#ccc] opacity-10"></p>
+        <p className="border-b-[1px] mt-[25px] mb-[25px] ml-1 w-11/12 border-[#ccc] opacity-10"></p>
         <ul className="list-none p-0">
           {routesList.map((route) => (
             <SidebarItem

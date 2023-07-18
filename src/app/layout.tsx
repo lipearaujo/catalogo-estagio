@@ -60,20 +60,6 @@ export default function RootLayout({
     return color;
   }
 
-  /* 
-    assisteciais: "bg-[#c62828]"
-    administrativos: "bg-[#558b2f]"
-    ensino: "bg-[#283593]"
-    formularios: "bg-[#00695c]"
-    relatorios: "bg-[#37474f]"
-    emails-inst: "bg-[#0277bd]"
-    portais: "bg-[#4527a0]"
-    trein-homol: "bg-[#f9a825]"
-    restritos: "bg-[#263238]"
-    manuais: "bg-[#263238]"
-    ajuda: "bg-[#263238]"
-  */
-
   return (
     <html lang="en">
       <body className={`${inter.className} ${currentRoute ? changeColor(currentRoute) : 'bg-[#263238]'}`}>{children}</body>

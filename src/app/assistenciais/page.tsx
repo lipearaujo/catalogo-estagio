@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 
 import Main from "@/components/Main";
 import Sidebar from "@/components/Sidebar";
@@ -8,7 +7,7 @@ import Card from "@/components/Card";
 import Image from "next/image";
 
 //importação das imagens Sistemas Assistenciais
-import AGHU from '../../../public/images/assistenciais/aghux.png';
+import AGHU from "../../../public/images/assistenciais/aghux.png";
 import Farmacia from "../../../public/images/assistenciais/sistemas-farmacia.png";
 import Nutricao from "../../../public/images/assistenciais/nutricao.png";
 import SilLab from "../../../public/images/assistenciais/sil-laboratorio.png";
@@ -31,12 +30,30 @@ import SIGTAP from "../../../public/images/assistenciais/datasus.png";
 import SISREG from "../../../public/images/assistenciais/datasus.png";
 import VigiHosp from "../../../public/images/assistenciais/vigihosp.png";
 
-
 const images = [
-  AGHU, Farmacia, Nutricao, SilLab, Pulseiras, GETS, SGFO, SGSTI, Udima, 
-  Termos, Cadsus, Alerta, Oviyam, PACS, SESMS, Datasus, SAMU, Prontuario, 
-  SAGH, SIGTAP, SISREG, VigiHosp
-]
+  AGHU,
+  Farmacia,
+  Nutricao,
+  SilLab,
+  Pulseiras,
+  GETS,
+  SGFO,
+  SGSTI,
+  Udima,
+  Termos,
+  Cadsus,
+  Alerta,
+  Oviyam,
+  PACS,
+  SESMS,
+  Datasus,
+  SAMU,
+  Prontuario,
+  SAGH,
+  SIGTAP,
+  SISREG,
+  VigiHosp,
+];
 
 const imagesSistemasAssistenciais = [
   {
@@ -193,7 +210,6 @@ const imagesSistemasAssistenciais = [
     alt: "VigiHosp",
     idColor: "text-[#455A64]",
   },
-
 ];
 
 type Props = {};
@@ -205,11 +221,13 @@ const Assistenciais = (props: Props) => {
       <Main title="Sistemas Assistenciais">
         <div className="flex flex-wrap justify-center gap-5  px-8">
           {imagesSistemasAssistenciais.map((image) => (
-            <Link href="">
-              <Card id={image.id}  text={image.text} idColor={image.idColor}>
-                <Image src={image.src} width={230} height={120} alt={image.alt}/>
-              </Card>
-            </Link>
+            <Card
+              id={image.id}
+              text={image.text}
+              idColor={image.idColor}
+            >
+              <Image src={image.src} width={230} height={120} alt={image.alt} />
+            </Card>
           ))}
         </div>
       </Main>
