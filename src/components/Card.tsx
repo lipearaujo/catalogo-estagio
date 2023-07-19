@@ -14,33 +14,36 @@ type Props = {
 const Card = ({ id, text, idColor, children }: Props) => {
   const [flip, setFlip] = useState(false);
 
-  const cardClass = 'w-[330px] h-[380px] bg-[#fff] rounded-3xl flex flex-col items-center justify-around  hover:shadow-lg hover:shadow-[#263238] hover:scale-105 ease-in-out duration-300'
-  const flipClass = "-rotate-180";
+  const cardClass = 'w-[330px] h-[380px] bg-[#fff] rounded-3xl flex  hover:shadow-lg hover:shadow-[#263238] ease-in-out duration-300'
+  const flipClass = "[transform-style:preserve-3d] [transform:rotateY(180deg)]";
 
   return (
     <div className={`${cardClass} ${flip ? flipClass : ''}`}>
-      <div>
-        <button
-          onClick={() => setFlip(!flip)}
-          className="ml-[280px]  text-[24px]"
-        >
-          <FaRegQuestionCircle />
-        </button>
+      <div className="w-full flex flex-col  gap-12">
+        <div className="w-full flex justify-end">
+          <span
+            className="text-[24px] mt-[30px] mr-[30px]"
+          >
+            <FaRegQuestionCircle className="cursor-pointer" onClick={() => setFlip(!flip)}/>
+          </span>
+        </div>
 
-        <Link href="">
-          <div className="flex flex-col gap-[50px] justify-center items-center">
-            {children}
-            <p className={`text-[20px] ${idColor} font-bold text-center`}>
-              {id}
-            </p>
-          </div>
-        </Link>
+        <div className="">
+          <Link href="">
+            <div className="flex flex-col gap-[50px] justify-center items-center">
+              {children}
+              <p className={`text-[20px] ${idColor} font-bold text-center`}>
+                {id}
+              </p>
+            </div>
+          </Link>
+        </div>
       </div>
 
-      {/*<div>
+{/*       <div className="relative inset-0">
         <button onClick={() => setFlip(!flip)}>X</button>
-        <p>{text}</p>
-  </div>*/}
+        <p className="w-[330px] h-[370px]">{text}</p>
+      </div> */}
     </div>
   );
 };
