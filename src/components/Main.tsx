@@ -5,7 +5,9 @@ import Link from "next/link";
 
 import { ImPhone } from "react-icons/im";
 import { HiSearch } from "react-icons/hi";
-import { RiLockPasswordFill } from "react-icons/ri"
+
+import Image from "next/image";
+import forgotPassword from '../../public/forgot-password.png'
 
 type Props = {
   title: string;
@@ -63,7 +65,7 @@ const Main = ({ children, title }: Props) => {
               title="Esqueci minha senha"
             >
               <i className="text-2xl">
-                <RiLockPasswordFill />
+                <Image src={forgotPassword} width={24} height={24} alt='forgot password' />
               </i>
             </Link>
           </nav>

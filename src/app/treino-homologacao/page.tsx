@@ -15,8 +15,7 @@ import SEI from '../../../public/images/treino-homologacao/sei-treinamento.png'
 type Props = {}
 
 const TreinoHomologacao = (props: Props) => {
-  const images = [
-    Homologacao, Implantação, Treinamento, MapaLeitos, SolicitacaoEspecial, SEI ]
+  const images = [ Homologacao, Implantação, Treinamento, MapaLeitos, SolicitacaoEspecial, SEI ]
   
   const imagesSistemasAssistenciais = [
     {
