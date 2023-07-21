@@ -1,21 +1,22 @@
-import Main from '@/components/Main'
-import Sidebar from '@/components/Sidebar'
-import Card from '@/components/Card'
-import React from 'react'
+import Main from "@/components/Main";
+import Sidebar from "@/components/Sidebar";
+import Card from "@/components/Card";
+import React from "react";
 
 import Image from "next/image";
 
-import EmailEbserh from '../../../public/images/emails/outlook-2019.png'
-import EmailUFGD from '../../../public/images/emails/gmail.png'
-import Microsoft365 from '../../../public/images/emails/microsoft-365.png'
-import MicrosoftTeams from '../../../public/images/emails/microsoft-teams.png'
+import EmailEbserh from "../../../public/images/emails/outlook-2019.png";
+import EmailUFGD from "../../../public/images/emails/gmail.png";
+import Microsoft365 from "../../../public/images/emails/microsoft-365.png";
+import MicrosoftTeams from "../../../public/images/emails/microsoft-teams.png";
+import Cards from "@/components/Cards";
 
-type Props = {}
+type Props = {};
 
 const EmailsInstitucionais = (props: Props) => {
-  const images = [ EmailEbserh, EmailUFGD, Microsoft365, MicrosoftTeams ]
-  
-  const imagesSistemasAssistenciais = [
+  const images = [EmailEbserh, EmailUFGD, Microsoft365, MicrosoftTeams];
+
+  const getInfosFromImages = [
     {
       id: "E-mail Ebserh",
       src: images[0],
@@ -50,20 +51,20 @@ const EmailsInstitucionais = (props: Props) => {
     <div className="flex">
       <Sidebar />
       <Main title="E-mails Institucionais">
-        <div className="flex flex-wrap justify-center gap-5  px-8">
-          {imagesSistemasAssistenciais.map((image) => (
-            <Card
-              id={image.id}
-              text={image.text}
-              idColor={image.idColor}
-            >
-              <Image src={image.src} width={230} height={120} alt={image.alt} />
-            </Card>
+        <div className="flex flex-wrap justify-center gap-5 px-8">
+          {getInfosFromImages.map((images) => (
+            <Cards
+              id={images.id}
+              src={images.src}
+              text={images.text}
+              alt={images.alt}
+              idColor={images.idColor}
+            />
           ))}
         </div>
       </Main>
     </div>
-  )
-}
+  );
+};
 
-export default EmailsInstitucionais
+export default EmailsInstitucionais;

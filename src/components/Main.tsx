@@ -27,7 +27,7 @@ const Main = ({ children, title }: Props) => {
   };
 
   return (
-    <main className="rounded-[30px] bg-[#F1F5F9] w-full flex-1 px-5 py-7">
+    <main className="rounded-[30px] bg-[#F1F5F9] flex-1 px-5 py-7">
       <header className="flex justify-between items-center">
         <h1 className="text-[24px]">{title}</h1>
         <div className="flex">

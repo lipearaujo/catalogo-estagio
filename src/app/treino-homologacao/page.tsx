@@ -1,23 +1,31 @@
-import Main from '@/components/Main'
-import Sidebar from '@/components/Sidebar'
-import Card from '@/components/Card'
-import React from 'react'
+import Main from "@/components/Main";
+import Sidebar from "@/components/Sidebar";
+import Card from "@/components/Card";
+import React from "react";
 
-import Image from 'next/image'
+import Image from "next/image";
 
-import Homologacao from '../../../public/images/treino-homologacao/aghux-homologacao.png'
-import Implantação from '../../../public/images/treino-homologacao/aghux-implantacao.png'
-import Treinamento from '../../../public/images/treino-homologacao/aghux-treinamento.png'
-import MapaLeitos from '../../../public/images/treino-homologacao/mapa-leitos.png'
-import SolicitacaoEspecial from '../../../public/images/treino-homologacao/procedimento-especial.png'
-import SEI from '../../../public/images/treino-homologacao/sei-treinamento.png'
+import Homologacao from "../../../public/images/treino-homologacao/aghux-homologacao.png";
+import Implantação from "../../../public/images/treino-homologacao/aghux-implantacao.png";
+import Treinamento from "../../../public/images/treino-homologacao/aghux-treinamento.png";
+import MapaLeitos from "../../../public/images/treino-homologacao/mapa-leitos.png";
+import SolicitacaoEspecial from "../../../public/images/treino-homologacao/procedimento-especial.png";
+import SEI from "../../../public/images/treino-homologacao/sei-treinamento.png";
+import Cards from "@/components/Cards";
 
-type Props = {}
+type Props = {};
 
 const TreinoHomologacao = (props: Props) => {
-  const images = [ Homologacao, Implantação, Treinamento, MapaLeitos, SolicitacaoEspecial, SEI ]
-  
-  const imagesSistemasAssistenciais = [
+  const images = [
+    Homologacao,
+    Implantação,
+    Treinamento,
+    MapaLeitos,
+    SolicitacaoEspecial,
+    SEI,
+  ];
+
+  const getInfosFromImages = [
     {
       id: "Homologação do AGHU",
       src: images[0],
@@ -52,34 +60,34 @@ const TreinoHomologacao = (props: Props) => {
       text: "Laudo para solicitação de diárias de acompanhantes, UTI e UCI; permanência à maior, além de procedimentos especiais.",
       alt: "Solicitação de Procedimentos Especiais",
       idColor: "text-[#455A64]",
-    },  
+    },
     {
       id: "Treinamento do SEI!",
       src: images[5],
       text: "Ambiente de treinamento do Sistema Eletrônico de Informações (SEI!), desenvolvido pelo Tribunal Regional Federal da 4ª Região (TRF4), é uma plataforma que engloba um conjunto de módulos e funcionalidades que promovem a eficiência administrativa. A solução é cedida gratuitamente para instituições públicas e permite transferir a gestão de documentos e de processos eletrônicos administrativos para um mesmo ambiente virtual. Mais informações em O que é o SEi.",
       alt: "Treinamento do SEI!",
       idColor: "text-[#455A64]",
-    },  
+    },
   ];
 
   return (
     <div className="flex">
       <Sidebar />
       <Main title="Treinamento e Homologação">
-        <div className="flex flex-wrap justify-center gap-5  px-8">
-          {imagesSistemasAssistenciais.map((image) => (
-            <Card
-              id={image.id}
-              text={image.text}
-              idColor={image.idColor}
-            >
-              <Image src={image.src} width={230} height={120} alt={image.alt} />
-            </Card>
+        <div className="flex flex-wrap justify-center gap-5 px-8">
+          {getInfosFromImages.map((images) => (
+            <Cards
+              id={images.id}
+              src={images.src}
+              text={images.text}
+              alt={images.alt}
+              idColor={images.idColor}
+            />
           ))}
         </div>
       </Main>
     </div>
-  )
-}
+  );
+};
 
-export default TreinoHomologacao
+export default TreinoHomologacao;

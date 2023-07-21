@@ -1,24 +1,30 @@
-import Main from '@/components/Main'
-import Sidebar from '@/components/Sidebar'
-import Card from '@/components/Card';
-import React from 'react'
+import Main from "@/components/Main";
+import Sidebar from "@/components/Sidebar";
+import Card from "@/components/Card";
+import React from "react";
 
 import Image from "next/image";
 
 //importação das imagens Sistemas de Ensino
-import PesquisaInovacao from '../../../public/images/ensino/pesquisa-inovacao.png'
-import Reservas from '../../../public/images/ensino/reservas.png'
-import GerenciaCAA from '../../../public/images/ensino/gerencia-caa.png'
-import ControleAcessoAcademicos from '../../../public/images/ensino/controle-acesso-academicos.png'
-import EscolaEbserh from '../../../public/images/ensino/escola-ebserh.png'
+import PesquisaInovacao from "../../../public/images/ensino/pesquisa-inovacao.png";
+import Reservas from "../../../public/images/ensino/reservas.png";
+import GerenciaCAA from "../../../public/images/ensino/gerencia-caa.png";
+import ControleAcessoAcademicos from "../../../public/images/ensino/controle-acesso-academicos.png";
+import EscolaEbserh from "../../../public/images/ensino/escola-ebserh.png";
+import Cards from "@/components/Cards";
 
-type Props = {}
+type Props = {};
 
 const Ensino = (props: Props) => {
   const images = [
-    PesquisaInovacao, Reservas, GerenciaCAA, ControleAcessoAcademicos, EscolaEbserh ]
-  
-  const imagesSistemasAssistenciais = [
+    PesquisaInovacao,
+    Reservas,
+    GerenciaCAA,
+    ControleAcessoAcademicos,
+    EscolaEbserh,
+  ];
+
+  const getInfosFromImages = [
     {
       id: "Pesquisa e Inovação em Saúde",
       src: images[0],
@@ -53,27 +59,27 @@ const Ensino = (props: Props) => {
       text: "Plataforma de educação à distância da Escola Ebserh de Educação Corporativa - 3EC.",
       alt: "Escola Ebserh - Nova 3EC",
       idColor: "text-[#455A64]",
-    },  
+    },
   ];
 
   return (
     <div className="flex">
       <Sidebar />
       <Main title="Sistemas de Ensino, Pesquisa e Inovação em Saúde">
-        <div className="flex flex-wrap justify-center gap-5  px-8">
-          {imagesSistemasAssistenciais.map((image) => (
-            <Card
-              id={image.id}
-              text={image.text}
-              idColor={image.idColor}
-            >
-              <Image src={image.src} width={230} height={120} alt={image.alt} />
-            </Card>
+        <div className="flex flex-wrap justify-center gap-5 px-8">
+          {getInfosFromImages.map((images) => (
+            <Cards
+              id={images.id}
+              src={images.src}
+              text={images.text}
+              alt={images.alt}
+              idColor={images.idColor}
+            />
           ))}
         </div>
       </Main>
     </div>
-  )
-}
+  );
+};
 
-export default Ensino
+export default Ensino;

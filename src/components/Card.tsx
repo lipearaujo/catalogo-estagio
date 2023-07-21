@@ -9,10 +9,11 @@ type Props = {
   id: string;
   text: string;
   idColor: string;
+  href: string;
   children: React.ReactNode;
 };
 
-const Card = ({ id, text, idColor, children }: Props) => {
+const Card = ({ id, text, idColor, href, children }: Props) => {
   const [flip, setFlip] = useState(false);
 
   const cardClass = 'w-[300px] h-[332px] border border-[#dbdbd9] bg-[#fff] rounded-3xl flex hover:shadow-lg hover:shadow-[#263238] ease-in-out duration-300'
@@ -28,7 +29,7 @@ const Card = ({ id, text, idColor, children }: Props) => {
         </div>
 
         <div className="">
-          <Link href="">
+          <Link href={href}>
             <div className="flex flex-col gap-[30px] px-1 justify-center items-center">
               {children}
               <p className={`text-[20px] ${idColor} font-bold text-center`}>

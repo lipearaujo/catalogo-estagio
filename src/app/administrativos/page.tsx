@@ -19,6 +19,7 @@ import SGA from "../../../public/images/administrativos/novosga.png";
 import SAPE from "../../../public/images/administrativos/sape-sis.png";
 import SIG from "../../../public/images/administrativos/sig.png";
 import Arquivador from "../../../public/images/administrativos/arquivador.png";
+import Cards from "@/components/Cards";
 
 type Props = {};
 
@@ -37,7 +38,7 @@ const Administrativo = (props: Props) => {
     Arquivador,
   ];
 
-  const imagesSistemasAssistenciais = [
+  const getInfosFromImages = [
     {
       id: "Help Desk - SETISD",
       src: images[0],
@@ -122,10 +123,14 @@ const Administrativo = (props: Props) => {
       <Sidebar />
       <Main title="Sistemas Administrativos">
         <div className="flex flex-wrap justify-center gap-5 px-8">
-          {imagesSistemasAssistenciais.map((image) => (
-            <Card id={image.id} text={image.text} idColor={image.idColor}>
-              <Image src={image.src} width={230} height={120} alt={image.alt} />
-            </Card>
+          {getInfosFromImages.map((images) => (
+            <Cards
+              id={images.id}
+              src={images.src}
+              text={images.text}
+              alt={images.alt}
+              idColor={images.idColor}
+            />
           ))}
         </div>
       </Main>

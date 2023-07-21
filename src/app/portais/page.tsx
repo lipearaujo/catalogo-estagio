@@ -1,33 +1,49 @@
-import Main from '@/components/Main'
-import Sidebar from '@/components/Sidebar'
-import Card from '@/components/Card'
-import React from 'react'
+import Main from "@/components/Main";
+import Sidebar from "@/components/Sidebar";
+import Card from "@/components/Card";
+import React from "react";
 
-import Image from 'next/image'
+import Image from "next/image";
 
-import HuDigital from '../../../public/images/portais/hu-digital.png'
-import PortalHU from '../../../public/images/portais/hugd.png'
-import PortalUFGD from '../../../public/images/portais/logo-ufgd-2022.png'
-import PortalEbserh from '../../../public/images/portais/ebserh.png'
-import PortalGov from '../../../public/images/portais/gov-br.png'
-import ContaGov from '../../../public/images/portais/gov-br.png'
-import CoinUFGD from '../../../public/images/portais/coin-ufgd.png'
-import TelUteis from '../../../public/images/portais/telefones-hugd.png'
-import EbserhYT from '../../../public/images/portais/ebserh_youtube.png'
-import HuYT from '../../../public/images/portais/hu-youtube.png'
-import EbserhIntranet from '../../../public/images/portais/ebserh-intranet.png'
-import EbserhPlataformas from '../../../public/images/portais/ebserh-plataformas-tecnologias.png'
-import PortalAGHU from '../../../public/images/portais/aghux-portal.png'
-import SEI from '../../../public/images/portais/sei.png'
-import PortalSIG from '../../../public/images/portais/sig.png'
+import HuDigital from "../../../public/images/portais/hu-digital.png";
+import PortalHU from "../../../public/images/portais/hugd.png";
+import PortalUFGD from "../../../public/images/portais/logo-ufgd-2022.png";
+import PortalEbserh from "../../../public/images/portais/ebserh.png";
+import PortalGov from "../../../public/images/portais/gov-br.png";
+import ContaGov from "../../../public/images/portais/gov-br.png";
+import CoinUFGD from "../../../public/images/portais/coin-ufgd.png";
+import TelUteis from "../../../public/images/portais/telefones-hugd.png";
+import EbserhYT from "../../../public/images/portais/ebserh_youtube.png";
+import HuYT from "../../../public/images/portais/hu-youtube.png";
+import EbserhIntranet from "../../../public/images/portais/ebserh-intranet.png";
+import EbserhPlataformas from "../../../public/images/portais/ebserh-plataformas-tecnologias.png";
+import PortalAGHU from "../../../public/images/portais/aghux-portal.png";
+import SEI from "../../../public/images/portais/sei.png";
+import PortalSIG from "../../../public/images/portais/sig.png";
+import Cards from "@/components/Cards";
 
-type Props = {}
+type Props = {};
 
 const Portais = (props: Props) => {
-  const images = [ HuDigital, PortalHU, PortalUFGD, PortalEbserh, PortalGov, ContaGov, CoinUFGD, TelUteis, EbserhYT, 
-    HuYT, EbserhIntranet, EbserhPlataformas, PortalAGHU, SEI, PortalSIG ]
-  
-  const imagesSistemasAssistenciais = [
+  const images = [
+    HuDigital,
+    PortalHU,
+    PortalUFGD,
+    PortalEbserh,
+    PortalGov,
+    ContaGov,
+    CoinUFGD,
+    TelUteis,
+    EbserhYT,
+    HuYT,
+    EbserhIntranet,
+    EbserhPlataformas,
+    PortalAGHU,
+    SEI,
+    PortalSIG,
+  ];
+
+  const getInfosFromImages = [
     {
       id: "HU Digital",
       src: images[0],
@@ -62,97 +78,97 @@ const Portais = (props: Props) => {
       text: "O gov.br reúne, em um só lugar, serviços para o cidadão e informações sobre a atuação de todas as áreas do governo brasileiro.",
       alt: "Portal GOV.BR",
       idColor: "text-[#4527a0]",
-    },  
+    },
     {
       id: "Conta e Serviços GOV.BR",
       src: images[5],
       text: "Gerencie sua conta gov.br, acompanhe os serviços solicitados e assine documentos digitalmente.",
       alt: "Conta e Serviços GOV.BR",
       idColor: "text-[#4527a0]",
-    },  
+    },
     {
       id: "Página da COIN/UFGD",
       src: images[6],
       text: "A Coordenadoria de Desenvolvimento de Tecnologia da Informação (COIN) da Universidade Federal da Grande Dourados (UFGD) tem por objetivo desenvolver as atividades de gestão de tecnologia da informação, definindo estratégias e executando o planejamento definido pelo Comitê Governança Digital (CGD). Exerce suas atividades nas áreas de sistemas de informações, desenvolvimento de sistemas, redes de comunicação e serviços associados, telefonia, segurança de tecnologia da informação, atendimento e suporte aos usuários​.",
       alt: "Página da COIN/UFGD",
       idColor: "text-[#4527a0]",
-    },  
+    },
     {
       id: "Telefones Úteis do HU-UFGD",
       src: images[7],
       text: "Ramais de todos os setores assistenciais e administrativos do HU-UFGD.",
       alt: "Telefones Úteis do HU-UFGD",
       idColor: "text-[#4527a0]",
-    },  
+    },
     {
       id: "Canal da Ebserh no Youtube",
       src: images[8],
       text: "Canal da Ebserh no YouTube, com tutoriais e orientações dos módulos do AGHU e do SIG.",
       alt: "Canal da Ebserh no Youtube",
       idColor: "text-[#455A64]",
-    },  
+    },
     {
       id: "Canal do HU-UFGD no Youtube",
       src: images[9],
       text: "Canal do HU-UFGD no YouTube para compartilhamento de vídeos institucionais (anteriormente usado o Canal da Unidade de Comunicação Social/HU-UFGD).",
       alt: "Canal do HU-UFGD no Youtube",
       idColor: "text-[#455A64]",
-    },  
+    },
     {
       id: "Intranet HU-UFGD/Ebserh",
       src: images[10],
       text: "Rede corporativa da Ebserh e suas filiais. Para mais informações e como se conectar à Intranet acesse a Central de Ajuda.",
       alt: "Intranet HU-UFGD/Ebserh",
       idColor: "text-[#455A64]",
-    },  
+    },
     {
       id: "Plataformas e Tecnologias Ebserh",
       src: images[11],
       text: "Portal da Ebserh com sistemas utilizados e/ou desenvolvidos pela Sede e filiais.",
       alt: "Plataformas e Tecnologias Ebserh",
       idColor: "text-[#455A64]",
-    },  
+    },
     {
       id: "Portal do AGHU",
       src: images[12],
       text: "Acesso ao portal com notícias, informações, manuais e cronograma de implantações do AGHU. ",
       alt: "Portal do AGHU",
       idColor: "text-[#455A64]",
-    },  
+    },
     {
       id: "Portal do SEI!",
       src: images[13],
       text: "O Sistema Eletrônico de Informações (SEI), desenvolvido pelo Tribunal Regional Federal da 4ª Região (TRF4), é uma ferramenta de gestão de documentos e processos eletrônicos, e tem como objetivo promover a eficiência administrativa. O SEI integra o Processo Eletrônico Nacional (PEN), uma iniciativa conjunta de órgãos e entidades de diversas esferas da administração pública, com o intuito de construir uma infraestrutura pública de processos e documentos administrativos eletrônico.",
       alt: "Portal do SEI",
       idColor: "text-[#455A64]",
-    },  
+    },
     {
       id: "Portal do SIG",
       src: images[14],
       text: "Acesso ao portal com notícias, informações, manuais e cronograma de treinamentos do SIG.",
       alt: "Portal do SIG",
       idColor: "text-[#455A64]",
-    },  
+    },
   ];
 
   return (
     <div className="flex">
       <Sidebar />
       <Main title="Portais">
-        <div className="flex flex-wrap justify-center gap-5  px-8">
-          {imagesSistemasAssistenciais.map((image) => (
-            <Card
-              id={image.id}
-              text={image.text}
-              idColor={image.idColor}
-            >
-              <Image src={image.src} width={230} height={120} alt={image.alt} />
-            </Card>
+        <div className="flex flex-wrap justify-center gap-5 px-8">
+          {getInfosFromImages.map((images) => (
+            <Cards
+              id={images.id}
+              src={images.src}
+              text={images.text}
+              alt={images.alt}
+              idColor={images.idColor}
+            />
           ))}
         </div>
       </Main>
     </div>
-  )
-}
+  );
+};
 
-export default Portais
+export default Portais;
