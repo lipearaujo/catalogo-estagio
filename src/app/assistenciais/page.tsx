@@ -219,13 +219,9 @@ const Assistenciais = (props: Props) => {
     <div className="flex">
       <Sidebar />
       <Main title="Sistemas Assistenciais">
-        <div className="flex flex-wrap justify-center gap-5  px-8">
+        <div className="flex flex-wrap justify-center gap-5 px-8">
           {imagesSistemasAssistenciais.map((image) => (
-            <Card
-              id={image.id}
-              text={image.text}
-              idColor={image.idColor}
-            >
+            <Card id={image.id} text={image.text} idColor={image.idColor}>
               <Image src={image.src} width={230} height={120} alt={image.alt} />
             </Card>
           ))}

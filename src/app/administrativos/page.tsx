@@ -1,33 +1,42 @@
-import React from 'react'
+import React from "react";
 import Link from "next/link";
 
-import Main from '@/components/Main'
-import Sidebar from '@/components/Sidebar'
+import Main from "@/components/Main";
+import Sidebar from "@/components/Sidebar";
 import Card from "@/components/Card";
 
 import Image from "next/image";
 
 //importação das imagens Sistemas Administrativos
-import HelpDesk from '../../../public/images/administrativos/glpi-sgpti.png';
-import SEI from '../../../public/images/administrativos/sei.png'
-import Arkmeds from '../../../public/images/administrativos/arkmeds.png'
-import PortalEmpregado from '../../../public/images/administrativos/ebserh.png'
-import ServicosTI from '../../../public/images/administrativos/servicos-ti.png'
-import Sigepe from '../../../public/images/administrativos/sigepe.png'
-import SouGov from '../../../public/images/administrativos/sougov.png'
-import SGA from '../../../public/images/administrativos/novosga.png'
-import SAPE from '../../../public/images/administrativos/sape-sis.png'
-import SIG from '../../../public/images/administrativos/sig.png'
-import Arquivador from '../../../public/images/administrativos/arquivador.png'
+import HelpDesk from "../../../public/images/administrativos/glpi-sgpti.png";
+import SEI from "../../../public/images/administrativos/sei.png";
+import Arkmeds from "../../../public/images/administrativos/arkmeds.png";
+import PortalEmpregado from "../../../public/images/administrativos/ebserh.png";
+import ServicosTI from "../../../public/images/administrativos/servicos-ti.png";
+import Sigepe from "../../../public/images/administrativos/sigepe.png";
+import SouGov from "../../../public/images/administrativos/sougov.png";
+import SGA from "../../../public/images/administrativos/novosga.png";
+import SAPE from "../../../public/images/administrativos/sape-sis.png";
+import SIG from "../../../public/images/administrativos/sig.png";
+import Arquivador from "../../../public/images/administrativos/arquivador.png";
 
-type Props = {}
+type Props = {};
 
 const Administrativo = (props: Props) => {
-
   const images = [
-    HelpDesk, SEI, Arkmeds, PortalEmpregado, ServicosTI, Sigepe, SouGov, SGA, SAPE, 
-    SIG, Arquivador ]
-  
+    HelpDesk,
+    SEI,
+    Arkmeds,
+    PortalEmpregado,
+    ServicosTI,
+    Sigepe,
+    SouGov,
+    SGA,
+    SAPE,
+    SIG,
+    Arquivador,
+  ];
+
   const imagesSistemasAssistenciais = [
     {
       id: "Help Desk - SETISD",
@@ -106,27 +115,22 @@ const Administrativo = (props: Props) => {
       alt: "Sistema de Arquivamento de Prontuários",
       idColor: "text-[#455A64]",
     },
-    
   ];
 
   return (
     <div className="flex">
       <Sidebar />
       <Main title="Sistemas Administrativos">
-        <div className="flex flex-wrap justify-center gap-5  px-8">
+        <div className="flex flex-wrap justify-center gap-5 px-8">
           {imagesSistemasAssistenciais.map((image) => (
-            <Card
-              id={image.id}
-              text={image.text}
-              idColor={image.idColor}
-            >
+            <Card id={image.id} text={image.text} idColor={image.idColor}>
               <Image src={image.src} width={230} height={120} alt={image.alt} />
             </Card>
           ))}
         </div>
       </Main>
     </div>
-  )
-}
+  );
+};
 
-export default Administrativo
+export default Administrativo;

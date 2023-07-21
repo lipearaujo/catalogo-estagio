@@ -7,7 +7,7 @@ import { ImPhone } from "react-icons/im";
 import { HiSearch } from "react-icons/hi";
 
 import Image from "next/image";
-import forgotPassword from '../../public/forgot-password.png'
+import forgotPassword from "../../public/forgot-password.png";
 
 type Props = {
   title: string;
@@ -49,7 +49,7 @@ const Main = ({ children, title }: Props) => {
             </i>
           </form>
           <nav className="flex gap-6">
-          <Link
+            <Link
               href="https://www.gov.br/ebserh/pt-br/hospitais-universitarios/regiao-centro-oeste/hu-ufgd/comunicacao/telefones-uteis"
               className="flex gap-1 justify-center items-center"
               title="Lista de Ramais"
@@ -58,14 +58,19 @@ const Main = ({ children, title }: Props) => {
                 <ImPhone />
               </i>
             </Link>
-            
+
             <Link
               href="https://servicosti.ebserh.gov.br/#/solicitar-alteracao-senha"
               className="flex gap-1 justify-center items-center"
               title="Esqueci minha senha"
             >
               <i className="text-2xl">
-                <Image src={forgotPassword} width={24} height={24} alt='forgot password' />
+                <Image
+                  src={forgotPassword}
+                  width={24}
+                  height={24}
+                  alt="forgot password"
+                />
               </i>
             </Link>
           </nav>
