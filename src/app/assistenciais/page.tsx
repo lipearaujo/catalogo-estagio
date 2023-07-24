@@ -133,7 +133,7 @@ const getInfosFromImages = [
     text: "Sistema de cadastro de termos de responsabilidade e consentimento.",
     alt: "Termos de Consentimento",
     idColor: "text-[#c62828]",
-    href: ''
+    href: 'http://10.18.0.62/termos/'
   },
   {
     id: "CADSUS Web",
@@ -157,7 +157,7 @@ const getInfosFromImages = [
     text: "Sistema usado para visualizar as imagens geradas pela Unidade de Diagnóstico por Imagem.",
     alt: "Oviyam 2.1",
     idColor: "text-[#455A64]",
-    href: ''
+    href: 'https://10.18.0.22:8443/oviyam2/'
   },
   {
     id: "PACS",
@@ -165,7 +165,7 @@ const getInfosFromImages = [
     text: "Sistema de Comunicação e Arquivamento de Imagens Médicas (voltado aos médicos radiologistas), utilizando a aplicação DCM4CHE.",
     alt: "PACS",
     idColor: "text-[#455A64]",
-    href: ''
+    href: 'http://10.18.0.22:8080/dcm4chee-web3/'
   },
   {
     id: "Portal de Regulamentação de Saúde/MS",
@@ -205,7 +205,7 @@ const getInfosFromImages = [
     text: "O Sistema de Apoio à Gestão - Hotelaria (SAGH) permite o monitoramento em tempo real da situação dos leitos no AGHU, em suas respectivas unidades funcionais, apoiando a gestão na tomada de decisão, além de ser uma ferramenta de comunicação e interação entre os diferentes setores. No SAGH é possível ter uma visão geral da situação dos leitos num determinado momento, de forma rápida e intuitiva para os usuários. Com isso, os gestores podem tomar decisões com maior agilidade, respaldos em informações confiáveis e a partir de uma única fonte de dados, no caso, o Sistema AGHU.",
     alt: "SAGH",
     idColor: "text-[#455A64]",
-    href: ''
+    href: 'http://10.18.0.74/sagh/'
   },
   {
     id: "SIGTAP",

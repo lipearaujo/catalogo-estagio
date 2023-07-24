@@ -23,19 +23,19 @@ export default function RootLayout({
   const changeColor = (route: any) => {
     let color = '';
 
-    if(route === '/assistenciais') {
+    if(route === '/assistenciais' || route === '/assistenciais/farmacia' || route === '/assistenciais/sil' || route === '/assistenciais/pulseiras' || route === '/assistenciais/nutricao') {
       color = "bg-[#c62828]"
     }
-    if(route === '/administrativos') {
+    if(route === '/administrativos' ) {
       color = "bg-[#558b2f]"
     }
-    if(route === '/ensino') {
+    if(route === '/ensino' || route === '/ensino/pesquisa') {
       color = "bg-[#283593]"
     }
     if(route === '/formularios') {
       color = "bg-[#00695c]"
     }
-    if(route === '/relatorios') {
+    if(route === '/relatorios' || route === '/relatorios/paineis') {
       color = "bg-[#37474f]"
     }
     if(route === '/emails-institucionais') {

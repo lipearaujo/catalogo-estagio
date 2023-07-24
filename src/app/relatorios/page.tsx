@@ -50,6 +50,7 @@ const Relatorios = (props: Props) => {
       text: "Sistema desenvolvido pelo SGPTI onde se concentram os principais relatórios utilizados no HU-UFGD",
       alt: "Sistema de Relatórios",
       idColor: "text-[#37474f]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/relator/'
     },
     {
       id: "Painéis Hospitalares",
@@ -57,6 +58,7 @@ const Relatorios = (props: Props) => {
       text: "Links para os painéis de indicadores hospitalares desenvolvidos pela equipe da USID.",
       alt: "Painéis Hospitalares",
       idColor: "text-[#37474f]",
+      href: '/relatorios/paineis'
     },
     {
       id: "Mapa de Leitos",
@@ -64,6 +66,7 @@ const Relatorios = (props: Props) => {
       text: "Relatório contendo a situação atual dos leitos, a ser utilizado pelo NIR.",
       alt: "Mapa de Leitos",
       idColor: "text-[#37474f]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/relator/relatorio/aghu/mapa-leitos'
     },
     {
       id: "Mapa de Leitos (COVID-19)",
@@ -71,6 +74,7 @@ const Relatorios = (props: Props) => {
       text: "Relatório contendo a situação atual dos leitos, com pacientes com COVID-19, a ser utilizado pelo NIR.",
       alt: "Mapa de Leitos (COVID-19)",
       idColor: "text-[#37474f]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/relator/relatorio/aghu/mapa-leitos-covid'
     },
     {
       id: "Atendimentos do PAGO",
@@ -78,6 +82,7 @@ const Relatorios = (props: Props) => {
       text: "Quantidade de atendimentos por período dos Pronto Atendimentos Ginecológico e Obstétrico, Clínico e Pediátrico.",
       alt: "Atendimentos do PAGO",
       idColor: "text-[#455A64]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/relator/relatorio/aghu/atendimentos-pago'
     },
     {
       id: "Beira de Leito - ADULTO",
@@ -85,6 +90,7 @@ const Relatorios = (props: Props) => {
       text: "Identificação para ser inserida na cabeceira do leito de um paciente adulto internado.",
       alt: "Beira de Leito - ADULTO",
       idColor: "text-[#455A64]",
+      href: 'http://10.18.0.62/formularios/tela-relatorio/parametro-prontuario'
     },
     {
       id: "Beira de Leito - NEONATAL",
@@ -92,6 +98,7 @@ const Relatorios = (props: Props) => {
       text: "Identificação para ser inserida na cabeceira do leito de um paciente da Unidade Neonatal internado.",
       alt: "Beira de Leito - NEONATAL",
       idColor: "text-[#455A64]",
+      href: 'http://10.18.0.62/formularios/tela-relatorio/parametro-prontuario'
     },
     {
       id: "Beira de Leito - PEDIATRIA",
@@ -99,6 +106,7 @@ const Relatorios = (props: Props) => {
       text: "Identificação para ser inserida na cabeceira do leito de um paciente pediátrico internado.",
       alt: "Beira de Leito - PEDIATRIA",
       idColor: "text-[#455A64]",
+      href: 'http://10.18.0.62/formularios/tela-relatorio/parametro-prontuario'
     },
     {
       id: "Casos de COVID-19",
@@ -106,6 +114,7 @@ const Relatorios = (props: Props) => {
       text: "Relatório de casos suspeitos de COVID-19 que estão sendo analisados.",
       alt: "Casos de COVID-19",
       idColor: "text-[#455A64]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/relator/relatorio/sistemas_prod/situacao-covid-ativas'
     },
     {
       id: "Métricas BRADEN",
@@ -113,6 +122,7 @@ const Relatorios = (props: Props) => {
       text: "Contagem de controles para utilização na geração de indicadores.",
       alt: "Métricas BRADEN",
       idColor: "text-[#455A64]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/relator/relatorio/aghu/extracao-registros-braden'
     },
     {
       id: "Pacientes Admitidos no Mês Anterior",
@@ -120,6 +130,7 @@ const Relatorios = (props: Props) => {
       text: "Lista dos pacientes admitidos no mês anterior à emissão desse relatório.",
       alt: "Pacientes Admitidos no Mês Anterior",
       idColor: "text-[#455A64]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/relator/relatorio/aghu/pacientes-admitidos-mes-anterior'
     },
     {
       id: "Pacientes Internados + 15 Dias no Mesmo Leito",
@@ -127,6 +138,7 @@ const Relatorios = (props: Props) => {
       text: "Lista com os pacientes internados a mais de 15 dias no mesmo leito.",
       alt: "Pacientes Internados + 15 Dias no Mesmo Leito",
       idColor: "text-[#455A64]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/relator/relatorio/aghu/pacientes-15-dias-leito'
     },
     {
       id: "PAGO - Risco por Bairro/Cidade",
@@ -134,6 +146,7 @@ const Relatorios = (props: Props) => {
       text: "Relatório dos Pronto Atendimentos Ginecológicos e Obstétricos com relação ao risco por bairro e cidade dos pacientes.",
       alt: "PAGO - Risco por Bairro/Cidade",
       idColor: "text-[#455A64]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/formularios/tela-relatorio/parametros-intervalo-datas'
     },
     {
       id: "Pentaho Assistencial",
@@ -141,6 +154,7 @@ const Relatorios = (props: Props) => {
       text: "Aplicação para emissão de relatórios do AGHU para a área assistencial.",
       alt: "Pentaho Assistencial",
       idColor: "text-[#455A64]",
+      href: 'http://bi.hugd.ebserh.gov.br/pentaho/Login'
     },
     {
       id: "Termo Transfusional",
@@ -148,6 +162,7 @@ const Relatorios = (props: Props) => {
       text: "Termo de Consentimento Livre e Esclarecido Transfusional.",
       alt: "Termo Transfusional",
       idColor: "text-[#455A64]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/formularios/tela-relatorio/parametros-paciente-responsavel'
     },
   ];
 
@@ -163,6 +178,7 @@ const Relatorios = (props: Props) => {
               text={images.text}
               alt={images.alt}
               idColor={images.idColor}
+              href={images.href}
             />
           ))}
         </div>

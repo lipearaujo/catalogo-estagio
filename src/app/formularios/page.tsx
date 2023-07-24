@@ -64,6 +64,7 @@ const Formularios = (props: Props) => {
       text: "Pré-cadastro para acesso à rede interna de computadores e ao sistema AGHU. Preenchimento obrigatório para novos funcionários e àqueles que ainda não possuírem acesso.",
       alt: "Formulário de Acesso - Rede/AGHU",
       idColor: "text-[#00695c]",
+      href: 'http://sistemas.hugd.ebserh.gov.br:9000/'
     },
     {
       id: "Aviso Alta",
@@ -71,6 +72,7 @@ const Formularios = (props: Props) => {
       text: "Formulário usado para emissão de aviso de alta hospitalar.",
       alt: "Aviso Alta",
       idColor: "text-[#455A64]",
+      href: 'http://10.18.0.89/sialtas/'
     },
     {
       id: "Diária de Acompanhamnto de Paciente",
@@ -78,6 +80,7 @@ const Formularios = (props: Props) => {
       text: "Formulário de solicitação de diária de acompanhante de paciente.",
       alt: "Diária de Acompanhamnto de Paciente",
       idColor: "text-[#455A64]",
+      href: 'http://10.18.0.89/faturamento/diariaFormPesqPront.php'
     },
     {
       id: "Ficha Transf. Cuidado entre Unidades de Internação",
@@ -85,6 +88,7 @@ const Formularios = (props: Props) => {
       text: "Ficha de Transferência de Cuidado entre Unidades de Internação.",
       alt: "Ficha Transf. Cuidado entre Unidades de Internação",
       idColor: "text-[#455A64]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/catalogo/arquivos/stgq/Ficha-transferencia-cuidado-entre-unidades-internacao.pdf'
     },
     {
       id: "Ficha Transf. Pré-op Adulto",
@@ -92,6 +96,7 @@ const Formularios = (props: Props) => {
       text: "Ficha de Transferência Pré-operatória Adulto.",
       alt: "Ficha Transf. Pré-op Adulto",
       idColor: "text-[#455A64]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/catalogo/arquivos/stgq/Ficha-transferencia-pre-operatoria-adulto.pdf'
     },
     {
       id: "Ficha Transf. Pré-op Ped. e Neonatal",
@@ -99,6 +104,7 @@ const Formularios = (props: Props) => {
       text: "Ficha de Transferência Pré-operatória Pediátrica e Neonatal.",
       alt: "Ficha Transf. Pré-op Ped. e Neonatal",
       idColor: "text-[#455A64]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/catalogo/arquivos/stgq/Ficha-transferencia-pre-operatoria-pediatrica-neonatal.pdf'
     },
     {
       id: "Formulário Vírus Respiratórios",
@@ -106,6 +112,7 @@ const Formularios = (props: Props) => {
       text: "Formulário para informar a situação de casos suspeitos de COVID-19 e Influenza.",
       alt: "Formulário Vírus Respiratórios",
       idColor: "text-[#455A64]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/formularios/formulario/virus-respiratorios'
     },
     {
       id: "Geração de AIH",
@@ -113,6 +120,7 @@ const Formularios = (props: Props) => {
       text: "Formulário para geração de Autorização de Internação Hospitalar.",
       alt: "Geração de AIH",
       idColor: "text-[#455A64]",
+      href: 'http://10.18.0.89/faturamento/form_pesquisa.php'
     },
     {
       id: "Investigação de Óbito de 1 ano ou mais",
@@ -120,6 +128,7 @@ const Formularios = (props: Props) => {
       text: "Formulário usado para investigar óbitos de um ano ou mais.",
       alt: "Investigação de Óbito de 1 ano ou mais",
       idColor: "text-[#455A64]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/gfo/fichas/listarCadastroDO'
     },
     {
       id: "Investigação de Óbito Fetal e Perinatal",
@@ -127,6 +136,7 @@ const Formularios = (props: Props) => {
       text: "Formulário usado para investigar um óbito perinatal (ou mortalidade infantil e fetal) ocorrido no HU-UFGD.",
       alt: "Investigação de Óbito Fetal e Perinatal",
       idColor: "text-[#455A64]",
+      href: 'https://forms.office.com/Pages/ResponsePage.aspx?id=3U3TZPCvlU238Qc0pchF5ZyzUTyoNApPiaD0P6w1AAhUQVRaWFk1WldRTzhLNVU1NjhFMERLSVpYNC4u'
     },
     {
       id: "Investigação de Óbito Infantil",
@@ -134,6 +144,7 @@ const Formularios = (props: Props) => {
       text: "Formulário usado para investigar um óbito infantil (29 dias a 1 ano) ocorrido no HU-UFGD.",
       alt: "Investigação de Óbito Infantil",
       idColor: "text-[#455A64]",
+      href: 'https://forms.office.com/Pages/ResponsePage.aspx?id=3U3TZPCvlU238Qc0pchF5ZyzUTyoNApPiaD0P6w1AAhUMk8zMjFLTTBFTkJJVE5USERKUkNDR0tOTi4u'
     },
     {
       id: "Investigação de Óbito Materno",
@@ -141,6 +152,7 @@ const Formularios = (props: Props) => {
       text: "Formulário usado para investigar um óbito materno ocorrido no HU-UFGD.",
       alt: "Investigação de Óbito Materno",
       idColor: "text-[#455A64]",
+      href: 'https://forms.office.com/Pages/ResponsePage.aspx?id=3U3TZPCvlU238Qc0pchF5ZyzUTyoNApPiaD0P6w1AAhUNlBVSFRHT1BENUM1TFRORkFNNzBDNlVEWi4u'
     },
     {
       id: "Parto Adequado",
@@ -148,6 +160,7 @@ const Formularios = (props: Props) => {
       text: "O Projeto Parto Adequado é uma iniciativa conjunta entre a Agência Nacional de Saúde Suplementar (ANS), o Hospital Israelita Albert Einstein e o Institute for Healthcare Improvement (IHI), com apoio do Ministério da Saúde. Tem por objetivo mudar o modelo de atenção ao parto, promovendo o parto normal, qualificando os serviços de assistência no pré-parto, parto e pós-parto e favorecendo a redução de cesáreas desnecessárias e de possíveis eventos adversos decorrentes de um parto não adequado. Com isso, busca-se reduzir riscos desnecessários e melhorar a segurança do paciente e a experiência do cuidado para mães e bebês.",
       alt: "Parto Adequado",
       idColor: "text-[#455A64]",
+      href: 'https://app.einstein.br/PartoAdequado/Home/Login'
     },
     {
       id: "Requisição de Exames Laboratoriais",
@@ -155,6 +168,7 @@ const Formularios = (props: Props) => {
       text: "Formulário utilizado para a solicitar a realização de exames laboratoriais.",
       alt: "Requisição de Exames Laboratoriais",
       idColor: "text-[#455A64]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/formularios/formulario/requisicao-exame-laboratorial/parametros'
     },
     {
       id: "Termo de Compromisso para Acesso ao Sistema CORE - Campo Grande/MS",
@@ -162,6 +176,7 @@ const Formularios = (props: Props) => {
       text: "Termo de Compromisso para Acesso ao Sistema CORE, de Campo Grande, Mato Grosso do Sul.",
       alt: "Termo de Compromisso para Acesso ao Sistema CORE - Campo Grande/MS",
       idColor: "text-[#455A64]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/catalogo/arquivos/nir/Termo-de-Compromisso-Regulacao_v3-CORE-CG-MS.pdf'
     },
     {
       id: "Termo de Consentimento de Cesárea",
@@ -169,6 +184,7 @@ const Formularios = (props: Props) => {
       text: "Termo de consentimento livre e esclarecido de pedido de cesárea feito pela paciente.",
       alt: "Termo de Consentimento de Cesárea",
       idColor: "text-[#455A64]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/formularios/tela-relatorio/parametros-crm-prontuario'
     },
     {
       id: "Termo de Responsabilidade",
@@ -176,6 +192,7 @@ const Formularios = (props: Props) => {
       text: "[PARA CADASTRADORES] Emissão do termo de responsabilidade do uso dos recursos de TIC e confidencialidade.",
       alt: "Termo de Responsabilidade",
       idColor: "text-[#455A64]",
+      href: 'http://sistemas.hugd.ebserh.gov.br/formularios/tela-relatorio/parametro-cpf'
     },
     {
       id: "Transferência de Gestantes",
@@ -183,6 +200,7 @@ const Formularios = (props: Props) => {
       text: "Formulário do NIR para solicitação de vaga de internação e transferência Gestante.",
       alt: "Transferência de Gestantes",
       idColor: "text-[#455A64]",
+      href: ''
     },
     {
       id: "Transferência de RN",
@@ -190,6 +208,7 @@ const Formularios = (props: Props) => {
       text: "Formulário do NIR para solicitação de vaga de internação e transferência de RN.",
       alt: "Transferência de RN",
       idColor: "text-[#455A64]",
+      href: ''
     },
     {
       id: "Transferência paciente SRAG",
@@ -197,6 +216,7 @@ const Formularios = (props: Props) => {
       text: "Formulário do NIR para solicitação de vaga de internação e transferência de paciente SRAG.",
       alt: "Transfência paciente SRAG",
       idColor: "text-[#455A64]",
+      href: ''
     },
     {
       id: "Transferência Padrão de Pacientes",
@@ -204,6 +224,7 @@ const Formularios = (props: Props) => {
       text: "Formulário do NIR para solicitação de vaga de internação e transferência padrão.",
       alt: "Transferência Padrão de Pacientes",
       idColor: "text-[#455A64]",
+      href: ''
     },
     {
       id: "Transferência Psiquiátrica",
@@ -211,6 +232,7 @@ const Formularios = (props: Props) => {
       text: "Formulário do NIR para solicitação de vaga de internação e transferência Psiquiátrica.",
       alt: "Transferência Psiquiátrica",
       idColor: "text-[#455A64]",
+      href: ''
     },
   ];
 
@@ -226,6 +248,7 @@ const Formularios = (props: Props) => {
               text={images.text}
               alt={images.alt}
               idColor={images.idColor}
+              href={images.href}
             />
           ))}
         </div>
