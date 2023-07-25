@@ -1,5 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+
+
+import SidebarItem from "./SidebarItem";
 
 import logoHU from "../../public/logo-hu.png";
 
@@ -11,10 +15,12 @@ import { MdEmail, MdCollectionsBookmark } from "react-icons/md";
 import { SiSpringsecurity } from "react-icons/si";
 import { MdHelpCenter } from "react-icons/md";
 import { BiSolidReport } from "react-icons/bi";
-import SidebarItem from "./SidebarItem";
-import Link from "next/link";
 
-const routesList = [
+type Props = {};
+
+const Sidebar = (props: Props) => {
+  
+  const routesList = [
   {
     id: "assistencias",
     name: "Assistenciais",
@@ -105,9 +111,6 @@ const routesList = [
   },
 ];
 
-type Props = {};
-
-const Sidebar = (props: Props) => {
   return (
     <aside className="w-[230px]">
       <nav className="w-full">
@@ -121,7 +124,7 @@ const Sidebar = (props: Props) => {
         </Link>
         <p className="border-b-[1px] mt-[25px] mb-[25px] ml-1 w-11/12 border-[#ccc] opacity-10"></p>
         <ul className="list-none p-0">
-          {routesList.map((route) => (
+          {routesList.map((route, idx) => (
             <SidebarItem
               id={route.id}
               name={route.name}

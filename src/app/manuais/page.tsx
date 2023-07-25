@@ -13,7 +13,7 @@ const Manuais = (props: Props) => {
         <Main title='Manuais'>
           <div className='flex flex-col gap-5'>
             <MainCard title='Documentos Institucionais'>
-              <ul className='mx-auto w-10/12 list-disc'>
+              <ul className='mx-auto w-10/12 list-disc text-[#455A64]'>
                 <li className='text-[14px] py-1'>
                   <strong><Link href='https://www.gov.br/ebserh/pt-br/hospitais-universitarios/regiao-centro-oeste/hu-ufgd/acesso-a-informacao/pops-protocolos-e-processos/superintendencia-1'>Documentos Publicados</Link></strong>
                 </li>
@@ -35,7 +35,7 @@ const Manuais = (props: Props) => {
             </MainCard>
 
             <MainCard title='Certificado Digital'>
-              <ul className='mx-auto w-10/12 list-disc'>
+              <ul className='mx-auto w-10/12 list-disc text-[#455A64]'>
                   <li className='text-[14px] py-1'>
                     Manuais de solicitação de certificado digital:
                     <ul className='mx-auto w-11/12 list-disc'>
@@ -61,9 +61,9 @@ const Manuais = (props: Props) => {
             </MainCard>
 
             <MainCard title='AGHUX'>
-              <p className="text-[14px] mx-auto w-11/12">Acesse no menu <strong><Link href='/portais'>Portais</Link></strong>, desse catálogo, o portal do AGHUX contendo os detalhes de cada módulo do sistema. Abaixo você pode acessar os manuais de cada um deles, usados no HU-UFGD:</p>
-              <h5 className='text-[20px] mx-auto font-bold w-11/12 mt-3'>Módulos:</h5>
-              <ul className='mx-auto w-10/12 list-disc'>
+              <p className="text-[14px] text-[#455A64] mx-auto w-11/12">Acesse no menu <strong><Link href='/portais'>Portais</Link></strong>, desse catálogo, o portal do AGHUX contendo os detalhes de cada módulo do sistema. Abaixo você pode acessar os manuais de cada um deles, usados no HU-UFGD:</p>
+              <h5 className='text-[20px] mx-auto font-bold w-11/12 mt-3 text-[#455A64]'>Módulos:</h5>
+              <ul className='mx-auto w-10/12 list-disc text-[#455A64]'>
                 <li className='text-[14px] py-1'>
                   <strong><Link href='https://tidocs.ebserh.gov.br/books/documentacao/chapter/modulo-ambulatorio-assistencial-e-administrativo'>Ambulatório Assistencial e Administrativo;</Link></strong>
                 </li>
@@ -126,11 +126,64 @@ const Manuais = (props: Props) => {
             </MainCard>
 
             <MainCard title='SEI!'>
-
+              <p className="text-[14px] text-[#455A64] mx-auto w-11/12">Abaixo você encontra os manuais, disponibilizados pela Ebserh Sede e Enap, o Procedimento Operacional Padrão e os cursos (Ebserh e Enap) do Sistema Eletrônico de Informações (SEI!):</p>
+              <h5 className='text-[20px] mx-auto font-bold w-11/12 mt-3 text-[#455A64]'>Manuais e POP:</h5>
+              <ul className='mx-auto w-10/12 list-disc text-[#455A64] font-bold'>
+                <li className='text-[14px] py-1'>
+                  <Link href='https://www.gov.br/economia/pt-br/acesso-a-informacao/sei/publicacoes'>Cartilhas e Manuais;</Link>
+                  <ul className='mx-auto w-11/12 list-disc text-[#455A64]'>
+                    <li className='text-[14px] py-1'>
+                      <Link href='http://sistemas.hugd.ebserh.gov.br/catalogo/arquivos/sei/Cartilha-do-usuario-do-SEI.pdf'>Cartilha do Usuário do SEI!.</Link>
+                    </li>
+                  </ul>
+                </li>
+                <li className='text-[14px] py-1'>
+                  <Link href='http://sistemas.hugd.ebserh.gov.br/catalogo/arquivos/sei/Projeto_Manual-Enap-sem-Papel_SEi!.pdf'>Manual (Enap);</Link>
+                </li>
+                <li className='text-[14px] py-1'>
+                  <Link href='http://sistemas.hugd.ebserh.gov.br/catalogo/arquivos/sei/POP_SEi!Usar_v2.6.pdf'>SEI! Usar - POP.</Link>
+                </li>
+              </ul>
+              <h5 className='text-[20px] mx-auto font-bold w-11/12 mt-3 text-[#455A64]'>Curso Sistema Eletrônico de Informações - SEI! USAR:</h5>
+              <ul className='mx-auto w-10/12 list-disc text-[#455A64] font-bold'>
+                <li className='text-[14px] py-1'>
+                  <Link href='https://www.escolavirtual.gov.br/curso/74'>Enap - Escola Nacional de Administração Pública.</Link>
+                </li>
+              </ul>
             </MainCard>
 
             <MainCard title='Informática na Saúde'>
-
+              <ul className='mx-auto w-10/12 list-disc text-[#455A64] font-bold'>
+                <li className='text-[14px] py-1'>
+                  <Link href='http://sistemas.hugd.ebserh.gov.br/catalogo/arquivos/setisd/manual-instalacao-cliente-vpn-windows.pdf'>Manual de Instalação do Cliente VPN;</Link>
+                </li>
+                <li className='text-[14px] py-1'>
+                  <Link href='http://sistemas.hugd.ebserh.gov.br/catalogo/arquivos/setisd/Manual-Microsoft-Teams.pdf'>Manual do Microsoft Teams (SETISD/HU-UFGD);</Link>
+                  <ul className='mx-auto w-11/12 list-disc'>
+                    <li className='text-[14px] py-1'>
+                      <Link href='http://sistemas.hugd.ebserh.gov.br/catalogo/arquivos/setisd/Microsoft-Teams_Guia-de-Inicio-Rapido_Microsoft.pdf'>Guia de Início Rápido (Microsoft);</Link>
+                    </li>
+                    <li className='text-[14px] py-1'>
+                      <Link href='https://learn.microsoft.com/pt-br/microsoftteams/get-started-with-teams-quick-start'>Visão Geral (Microsoft);</Link>
+                    </li>
+                    <li className='text-[14px] py-1'>
+                      <Link href='https://support.microsoft.com/pt-br/office/agendar-um-evento-ao-vivo-no-microsoft-teams-7a9ce97c-e1cd-470f-acaf-e6dfc179a0e2'>Como Agendar Um Evento ao Vivo (live) no Teams.</Link>
+                    </li>
+                  </ul>
+                </li>
+                <li className='text-[14px] py-1'>
+                  <Link href='http://sistemas.hugd.ebserh.gov.br/catalogo/arquivos/setisd/Manual-de-abertura-de-chamado_HelpDesk-SETISD.pdf'>Abertura de Chamado Via Help Desk (SETISD);</Link>
+                </li>
+                <li className='text-[14px] py-1'>
+                  <Link href='http://sistemas.hugd.ebserh.gov.br/catalogo/arquivos/setisd/como-preencher-formulario-acesso-v1.1.pdf'>Preenchimento do Formulário de Acesso;</Link>
+                </li>
+                <li className='text-[14px] py-1'>
+                  <Link href='http://sistemas.hugd.ebserh.gov.br/catalogo/arquivos/setisd/como-fazer-captura-tela-erro-aghu-sistemas-v1.0.pdf'>PRINT SCREEN no Windows;</Link>
+                </li>
+                <li className='text-[14px] py-1'>
+                  <Link href='http://sistemas.hugd.ebserh.gov.br/catalogo/arquivos/setisd/como-adicionar-excecao-certificado-seguranca-firefox-chrome-v1.0.pdf'>Adicionar Exceção de Segurança no Mozilla Firefox/Google Chrome.</Link>
+                </li>
+              </ul>
             </MainCard>
           </div>
         </Main>

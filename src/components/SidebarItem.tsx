@@ -22,7 +22,7 @@ const SidebarItem = ({ id, name, href, icon, color, tooltip }: Props) => {
     <li id={id} key={name} className="mt-2 h-[50px]">
       <Link
         href={href}
-        className={currentRoute === href ? activeLinkStyle : linkStyle}
+        className={`${currentRoute === href ? activeLinkStyle : linkStyle}`}
         title={tooltip}
       >
         <i className="text-2xl">{icon}</i>
@@ -37,7 +37,6 @@ const SidebarItem = ({ id, name, href, icon, color, tooltip }: Props) => {
         </> )) : 
         ('')
        }
-
     </li>
   );
 };
