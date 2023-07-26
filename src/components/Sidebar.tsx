@@ -124,12 +124,12 @@ const Sidebar = (props: Props) => {
         <Link
           href="/"
           title="Página inicial"
-          className="flex items-center justify-center"
+          className="flex items-center justify-center mr-7"
         >
           <Image src={logoHU} width={80} height={80} alt="Logo do HU-UFGD" />
         </Link>
         <p className="border-b-[1px] mt-[25px] mb-[25px] ml-1 w-11/12 border-[#ccc] opacity-10"></p>
-        <ul className="list-none p-0">
+        <ul className="list-none p-0 hidden lg:flex lg:flex-col">
           {routesList.map((route) => (
             <SidebarItem
               id={route.id}

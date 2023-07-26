@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-import { FaRegQuestionCircle } from "react-icons/fa";
-import { AiOutlineCloseCircle } from 'react-icons/ai'
+import { AiFillCloseCircle } from "react-icons/ai";
+import { BsFillQuestionCircleFill } from "react-icons/bs";
 
 type Props = {
   id: string;
@@ -16,7 +16,8 @@ type Props = {
 const Card = ({ id, text, idColor, href, children }: Props) => {
   const [flip, setFlip] = useState(false);
 
-  const cardClass = 'w-[300px] h-[332px] border border-[#dbdbd9] bg-[#fff] rounded-3xl flex hover:shadow-lg hover:shadow-[#263238] ease-in-out duration-300'
+  //const cardClass = "w-[300px] h-[332px] border border-[#dbdbd9] bg-[#fff] rounded-3xl flex hover:border-[#263238] ease-in-out duration-300"
+  const cardClass = "w-[300px] h-[332px] border border-[#dbdbd9] bg-[#fff] rounded-3xl flex hover:shadow-lg hover:shadow-[#263238] ease-in-out duration-300";
   const flipClass = "[transform-style:preserve-3d] [transform:rotateY(180deg)]";
 
   const Front = () => {
@@ -24,7 +25,10 @@ const Card = ({ id, text, idColor, href, children }: Props) => {
       <div className="w-full flex flex-col gap-6">
         <div className="w-full flex justify-end">
           <span className="text-[24px] mt-[30px] mr-[30px]">
-            <FaRegQuestionCircle className="cursor-pointer" onClick={() => setFlip(!flip)}/>
+            <BsFillQuestionCircleFill
+              className="cursor-pointer"
+              onClick={() => setFlip(!flip)}
+            />
           </span>
         </div>
 
@@ -39,32 +43,35 @@ const Card = ({ id, text, idColor, href, children }: Props) => {
           </Link>
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   const Back = () => {
     return (
       <div className="w-full max-h-[320px] flex flex-col gap-5 [transform:rotateY(180deg)] px-2">
-        <button className="mt-[30px] mr-[30px] text-[26px] flex justify-end" onClick={() => setFlip(!flip)}>
-          <AiOutlineCloseCircle />
+        <button
+          className="mt-[30px] mr-[30px] text-[26px] flex justify-end"
+          onClick={() => setFlip(!flip)}
+        >
+          <AiFillCloseCircle />
         </button>
         <p className="line-clamp-[11] text-center text-sm">{text}</p>
       </div>
-    )
-  }
+    );
+  };
 
   const SwitchSides = () => {
-    if(flip === false) {
-      return <Front />
+    if (flip === false) {
+      return <Front />;
     }
 
-    if(flip === true) {
-      return <Back />
+    if (flip === true) {
+      return <Back />;
     }
-  }
+  };
 
   return (
-    <div className={`${cardClass} ${flip ? flipClass : '' }`}>
+    <div className={`${cardClass} ${flip ? flipClass : ""}`}>
       <SwitchSides />
     </div>
   );
