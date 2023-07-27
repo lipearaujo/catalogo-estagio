@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,18 +8,24 @@ import SidebarItem from "./SidebarItem";
 
 import logoHU from "../../public/logo-hu.png";
 
-import { GiMedicalPack } from "react-icons/gi";
+import { GiMedicalPack, GiHamburgerMenu } from "react-icons/gi";
 import { FaSuitcase, FaNewspaper } from "react-icons/fa";
 import { RiGraduationCapFill } from "react-icons/ri";
 import { PiClipboardTextFill, PiNotebookFill } from "react-icons/pi";
-import { MdEmail, MdCollectionsBookmark } from "react-icons/md";
+import { MdEmail, MdCollectionsBookmark, MdHelpCenter } from "react-icons/md";
 import { SiSpringsecurity } from "react-icons/si";
-import { MdHelpCenter } from "react-icons/md";
 import { BiSolidReport } from "react-icons/bi";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 type Props = {};
 
 const Sidebar = (props: Props) => {
+  const [menuOpen, setMenuOpen] = useState<Boolean>(false);
+
+  const handleNav = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   const routesList = [
     {
       id: "assistencias",
@@ -119,17 +127,29 @@ const Sidebar = (props: Props) => {
   ];
 
   return (
-    <aside className="w-[230px]">
+    <aside className="w-[230px] max-lg:w-[100px] bg-green-500">
       <nav className="w-full">
-        <Link
-          href="/"
-          title="Página inicial"
-          className="flex items-center justify-center mr-7"
-        >
-          <Image src={logoHU} width={80} height={80} alt="Logo do HU-UFGD" />
-        </Link>
-        <p className="border-b-[1px] mt-[25px] mb-[25px] ml-1 w-11/12 border-[#ccc] opacity-10"></p>
-        <ul className="list-none p-0 hidden lg:flex lg:flex-col">
+        <div className="flex justify-center items-center gap-3 max-lg:mt-6 max-lg:ml-5">
+          <div onClick={handleNav} className="lg:hidden">
+            <GiHamburgerMenu
+              size={24}
+              className="text-white cursor-pointer relative top-1"
+            />
+          </div>
+          <Link
+            href="/"
+            title="Página inicial"
+            className="flex items-center justify-center mr-7"
+          >
+            <Image
+              src={logoHU}
+              alt="Logo do HU-UFGD"
+              className="w-[40px] lg:w-[80px]"
+            />
+          </Link>
+        </div>
+        <p className="hidden lg:block border-b-[1px] mt-[25px] mb-[25px] ml-1 w-11/12 border-[#ccc] opacity-10"></p>
+        <ul className="list-none p-0 hidden lg:flex flex-col">
           {routesList.map((route) => (
             <SidebarItem
               id={route.id}
@@ -144,8 +164,8 @@ const Sidebar = (props: Props) => {
         </ul>
       </nav>
 
-      <p className="border-b-[1px] mt-8 mb-8 ml-1 w-11/12 border-[#ccc] opacity-10"></p>
-      <footer className="flex flex-col items-start gap-2 px-5 text-[14px] rounded-[10px] text-white">
+      <p className="hidden lg:block border-b-[1px] mt-8 mb-8 ml-1 w-11/12 border-[#ccc] opacity-10"></p>
+      <footer className="hidden lg:flex flex-col items-start gap-2 px-5 text-[14px] rounded-[10px] text-white">
         <p className="">
           <strong>Seu IP é: 10.18.129.197</strong>
         </p>
@@ -154,6 +174,45 @@ const Sidebar = (props: Props) => {
         </p>
         <p>SETISD/HU-UFGD/Ebserh</p>
       </footer>
+
+      <div
+        className={
+          menuOpen
+            ? "fixed left-0 top-0 w-[65%] lg:hidden md:max-lg:w-[40%] h-screen border-r border-[#263238] bg-[#F1F5F9] p-10 ease-in duration-500 z-50"
+            : "fixed left-[-100%] top-0 p-10 ease-in duration-500"
+        }
+      >
+        <div className="flex w-full items-center justify-end">
+          <div onClick={handleNav} className="cursor-pointer">
+            <AiFillCloseCircle size={24} />
+          </div>
+        </div>
+        <div>
+          <ul className="list-none p-0 flex flex-col">
+            {routesList.map((route) => (
+              <SidebarItem
+                id={route.id}
+                name={route.name}
+                href={route.href}
+                subHref={route.subHref}
+                icon={route.icon}
+                color={route.color}
+                tooltip={route.tooltip}
+              />
+            ))}
+          </ul>
+          <p className="lg:block border-b-[1px] mt-4 mb-4 ml-1 w-full border-[#ccc] opacity-10"></p>
+          <footer className="flex flex-col items-center gap-2 text-[14px] rounded-[10px] text-start text-white">
+            <p className="">
+              <strong>Seu IP é: 10.18.129.197</strong>
+            </p>
+            <p>
+              <strong>© Catálogo de Sistemas</strong>
+            </p>
+            <p>SETISD/HU-UFGD/Ebserh</p>
+          </footer>
+        </div>
+      </div>
     </aside>
   );
 };
