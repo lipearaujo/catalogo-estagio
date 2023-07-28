@@ -237,7 +237,7 @@ type Props = {};
 
 const Assistenciais = (props: Props) => {
   return (
-    <div className="flex">
+    <div className="flex max-lg:flex-col">
       <Sidebar />
       <Main title="Sistemas Assistenciais">
         <div className="flex flex-wrap justify-center gap-5 px-8 max-lg:px-0">

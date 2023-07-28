@@ -52,7 +52,7 @@ const EmailsInstitucionais = (props: Props) => {
   ];
 
   return (
-    <div className="flex">
+    <div className="flex max-lg:flex-col">
       <Sidebar />
       <Main title="E-mails Institucionais">
         <div className="flex flex-wrap justify-center gap-5 px-8">

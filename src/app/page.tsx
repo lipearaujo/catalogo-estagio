@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex">
+    <div className="flex max-lg:flex-col">
       <Sidebar />
       <Main title="Catálogo de Sistemas">
         <div className="flex flex-col gap-5">

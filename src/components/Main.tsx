@@ -24,11 +24,11 @@ const Main = ({ children, title }: Props) => {
   };
 
   return (
-    <main className="rounded-[30px] bg-[#F1F5F9] flex-1 px-5 py-7 max-lg:px-0">
-      <header className="flex justify-between items-center max-lg:px-5">
+    <main className="max-lg:rounded-none rounded-[30px] bg-[#F1F5F9] flex-1 px-5 py-7 ">
+      <header className="flex justify-between items-center">
         <h1 className="text-[24px]">{title}</h1>
         <div className="flex gap-5">
-          <div className="hidden lg:flex relative rounded-[999px] ">
+          <div className="hidden md:flex relative rounded-[999px] ">
             <form action="" className="flex justify-center items-center">
               <input
                 type="text"

@@ -110,7 +110,7 @@ const Pesquisa = (props: Props) => {
     const currentRoute = usePathname();
 
     return (
-      <div className="flex">
+      <div className="flex max-lg:flex-col">
         <Sidebar />
         <Main title="Sistemas de Ensino, Pesquisa e Inovação em Saúde > Pesquisa e Inovação em Saúde">
           <div className="flex flex-wrap justify-center gap-5 px-8">

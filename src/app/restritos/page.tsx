@@ -7,7 +7,7 @@ type Props = {};
 
 const Restritos = async (props: Props) => {
   return (
-    <div className="flex">
+    <div className="flex max-lg:flex-col">
       <Sidebar />
       <Main title="Restritos">
         <Login />

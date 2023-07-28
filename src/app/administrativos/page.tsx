@@ -130,7 +130,7 @@ const Administrativo = (props: Props) => {
   ];
 
   return (
-    <div className="flex">
+    <div className="flex max-lg:flex-col">
       <Sidebar />
       <Main title="Sistemas Administrativos">
         <div className="flex flex-wrap justify-center gap-5 px-8">

@@ -9,7 +9,7 @@ type Props = {};
 
 const Ajuda = (props: Props) => {
   return (
-    <div className="flex">
+    <div className="flex max-lg:flex-col">
       <Sidebar />
       <Main title="Ajuda">
         <div className="flex flex-col gap-5">

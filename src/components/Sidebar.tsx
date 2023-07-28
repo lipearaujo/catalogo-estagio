@@ -127,9 +127,9 @@ const Sidebar = (props: Props) => {
   ];
 
   return (
-    <aside className="w-[230px] max-lg:w-[100px] bg-green-500">
+    <aside className="w-[230px]">
       <nav className="w-full">
-        <div className="flex justify-center items-center gap-3 max-lg:mt-6 max-lg:ml-5">
+        <div className="flex justify-center items-center gap-3 max-lg:justify-between max-lg:w-screen max-lg:items-center max-lg:h-[56px] max-lg:px-5 max-lg:py-2">
           <div onClick={handleNav} className="lg:hidden">
             <GiHamburgerMenu
               size={24}
@@ -139,7 +139,7 @@ const Sidebar = (props: Props) => {
           <Link
             href="/"
             title="Página inicial"
-            className="flex items-center justify-center mr-7"
+            className="flex items-center justify-center mr-7 max-lg:mr-0"
           >
             <Image
               src={logoHU}
@@ -152,6 +152,7 @@ const Sidebar = (props: Props) => {
         <ul className="list-none p-0 hidden lg:flex flex-col">
           {routesList.map((route) => (
             <SidebarItem
+              key={route.id}
               id={route.id}
               name={route.name}
               href={route.href}
@@ -178,8 +179,8 @@ const Sidebar = (props: Props) => {
       <div
         className={
           menuOpen
-            ? "fixed left-0 top-0 w-[65%] lg:hidden md:max-lg:w-[40%] h-screen border-r border-[#263238] bg-[#F1F5F9] p-10 ease-in duration-500 z-50"
-            : "fixed left-[-100%] top-0 p-10 ease-in duration-500"
+            ? "fixed left-0 top-0 overflow-auto w-[70%] lg:hidden md:max-lg:w-[40%] h-screen border-r border-[#263238] bg-[#F1F5F9] p-10 ease-in duration-500 z-50"
+            : "fixed left-[-100%] top-0 p-10 h-screen ease-in duration-500"
         }
       >
         <div className="flex w-full items-center justify-end">
@@ -188,9 +189,10 @@ const Sidebar = (props: Props) => {
           </div>
         </div>
         <div>
-          <ul className="list-none p-0 flex flex-col">
+          <ul className="list-none p-0 text-black flex flex-col">
             {routesList.map((route) => (
               <SidebarItem
+                key={route.id}
                 id={route.id}
                 name={route.name}
                 href={route.href}
@@ -201,6 +203,7 @@ const Sidebar = (props: Props) => {
               />
             ))}
           </ul>
+
           <p className="lg:block border-b-[1px] mt-4 mb-4 ml-1 w-full border-[#ccc] opacity-10"></p>
           <footer className="flex flex-col items-center gap-2 text-[14px] rounded-[10px] text-start text-white">
             <p className="">

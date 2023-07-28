@@ -75,7 +75,7 @@ const TreinoHomologacao = (props: Props) => {
   ];
 
   return (
-    <div className="flex">
+    <div className="flex max-lg:flex-col">
       <Sidebar />
       <Main title="Treinamento e Homologação">
         <div className="flex flex-wrap justify-center gap-5 px-8">
