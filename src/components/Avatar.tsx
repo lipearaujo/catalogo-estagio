@@ -31,10 +31,10 @@ const Avatar = (props: Props) => {
           <p className="text-sm">...</p>
         </div>
         <p className="border-b-[1px]  w-full border-[#ececec]"></p>
-        <div className="flex flex-col gap-2 h-full p-3">
+        <div className="flex flex-col gap-2 h-full p-2">
           <Link
             href="https://www.gov.br/ebserh/pt-br/hospitais-universitarios/regiao-centro-oeste/hu-ufgd/comunicacao/telefones-uteis"
-            className="flex gap-2 justify-start items-center"
+            className="flex gap-2 p-2 justify-start items-center hover:rounded-[5px] hover:bg-[#f0efef] ease-in-out duration-200"
             title="Lista de Ramais"
           >
             <i className="text-sm">
@@ -45,7 +45,7 @@ const Avatar = (props: Props) => {
 
           <Link
             href="https://servicosti.ebserh.gov.br/#/solicitar-alteracao-senha"
-            className="flex gap-2 justify-start items-center"
+            className="flex gap-2 p-2 justify-start items-center hover:rounded-[5px] hover:bg-[#f0efef] ease-in-out duration-200"
             title="Esqueci minha senha"
           >
             <i className="text-sm">
@@ -55,11 +55,11 @@ const Avatar = (props: Props) => {
           </Link>
         </div>
         <p className="border-b-[1px]  w-full border-[#ececec]"></p>
-        <div className="flex h-full items-center gap-2 p-3">
-          <i>
+        <div className="flex items-center justify-start p-2">
+          <div className="w-full p-2 flex items-center justify-start gap-2 hover:rounded-[5px] hover:bg-[#f0efef] ease-in-out duration-200">
             <FaSignInAlt />
-          </i>
-          <button>Entrar</button>
+            <button>Entrar</button>
+          </div>
         </div>
       </div>
     </nav>

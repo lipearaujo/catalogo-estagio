@@ -167,7 +167,7 @@ const Sidebar = (props: Props) => {
 
       <p className="hidden lg:block border-b-[1px] mt-8 mb-8 ml-1 w-11/12 border-[#ccc] opacity-10"></p>
       <footer className="hidden lg:flex flex-col items-start gap-2 px-5 text-[14px] rounded-[10px] text-white">
-        <p className="">
+        <p>
           <strong>Seu IP é: 10.18.129.197</strong>
         </p>
         <p>
@@ -179,8 +179,8 @@ const Sidebar = (props: Props) => {
       <div
         className={
           menuOpen
-            ? "fixed left-0 top-0 overflow-auto w-[70%] lg:hidden md:max-lg:w-[40%] h-screen border-r border-[#263238] bg-[#F1F5F9] p-10 ease-in duration-500 z-50"
-            : "fixed left-[-100%] top-0 p-10 h-screen ease-in duration-500"
+            ? "max-sm:p-2 fixed left-0 top-0 overflow-auto w-[70%] lg:hidden md:max-lg:w-[40%] h-screen border-r border-[#263238] bg-[#F1F5F9] p-10 ease-in duration-500 z-50"
+            : "max-sm:p-2 fixed left-[-100%] top-0 p-10 h-screen ease-in duration-500"
         }
       >
         <div className="flex w-full items-center justify-end">
@@ -188,7 +188,7 @@ const Sidebar = (props: Props) => {
             <AiFillCloseCircle size={24} />
           </div>
         </div>
-        <div>
+        <div className="w-full">
           <ul className="list-none p-0 text-black flex flex-col">
             {routesList.map((route) => (
               <SidebarItem
@@ -205,7 +205,7 @@ const Sidebar = (props: Props) => {
           </ul>
 
           <p className="lg:block border-b-[1px] mt-4 mb-4 ml-1 w-full border-[#ccc] opacity-10"></p>
-          <footer className="flex flex-col items-center gap-2 text-[14px] rounded-[10px] text-start text-white">
+          <footer className="flex flex-col items-center gap-2 text-[14px] rounded-[10px] text-start text-black">
             <p className="">
               <strong>Seu IP é: 10.18.129.197</strong>
             </p>
