@@ -15,7 +15,7 @@ type Props = {
 
 const Main = ({ children, title }: Props) => {
   const [inputText, setInputText] = useState<string>("");
-  const [showArrowButton, setShoArrowButton] = useState(false);
+  const [showArrowButton, setShoArrowButton] = useState<boolean>(false);
 
   useEffect(() => {
     const scrollListener = () => {
@@ -57,7 +57,7 @@ const Main = ({ children, title }: Props) => {
               />
             </form>
             <div className="text-3xl h-[30px] rounded-[999px] flex justify-center items-center absolute right-[5px] top-[5px] bg-slate-300">
-              <i onClick={search}>
+              <i onClick={search} className="cursor-pointer">
                 <IoSearchCircleSharp />
               </i>
             </div>

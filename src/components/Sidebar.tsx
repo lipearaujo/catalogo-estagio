@@ -127,7 +127,7 @@ const Sidebar = (props: Props) => {
   ];
 
   return (
-    <aside className="w-[230px]">
+    <aside className="w-[230px] max-[1023px]:w-full">
       <nav className="w-full">
         <div className="flex justify-center items-center gap-3 max-lg:justify-between max-lg:w-screen max-lg:items-center max-lg:h-[56px] max-lg:px-5 max-lg:py-2">
           <div onClick={handleNav} className="lg:hidden">

@@ -8,7 +8,7 @@ import { BiSolidLockAlt } from "react-icons/bi";
 type Props = {};
 
 const Avatar = (props: Props) => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   const showMenu = () => {
     setMenuOpen(!menuOpen);

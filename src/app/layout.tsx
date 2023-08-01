@@ -3,9 +3,12 @@
 import "./globals.css";
 import { usePathname } from "next/navigation";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Open_Sans } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+const openSans = Open_Sans({
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Catálogo de Sistemas",
@@ -66,14 +69,17 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
-      <body
-        className={`${inter.className} ${
-          currentRoute ? changeColor(currentRoute) : "bg-[#263238]"
-        }`}
-      >
-        {children}
-      </body>
-    </html>
+    <>
+      <title>Catálogo de Sistemas</title>
+      <html lang="en">
+        <body
+          className={`${openSans.className} ${
+            currentRoute ? changeColor(currentRoute) : "bg-[#263238]"
+          }`}
+        >
+          {children}
+        </body>
+      </html>
+    </>
   );
 }
