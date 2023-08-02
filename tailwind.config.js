@@ -14,12 +14,17 @@ module.exports = {
       },
       keyframes: {
         slidein: {
-          "0%": { marginLeft: "100%", width: '100%' },
-          "100%": { marginLeft: "0%", width: '100%' },
+          "0%": { marginLeft: "10%", width: '100%'},
+          "100%": { marginLeft: "0%", width: '100%'},
+        },
+        headerSlidein: {
+          "0%": { marginLeft: "100%", width: '100%'},
+          "100%": { marginLeft: "0%", width: '100%'},
         },
       },
       animation: {
-        slidein: "slidein 0.5s ease-in-out ",
+        slidein: "slidein 0.8s ease-in",
+        headerSlidein: "headerSlidein 0.8s ease-in"
       },
     },
   },

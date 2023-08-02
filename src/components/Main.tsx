@@ -7,6 +7,7 @@ import { IoSearchCircleSharp } from "react-icons/io5";
 import ArrowButton from "./ArrowButton";
 
 import Avatar from "./Avatar";
+import AddButton from "./AddButton";
 
 type Props = {
   title: string;
@@ -15,12 +16,15 @@ type Props = {
 
 const Main = ({ children, title }: Props) => {
   const [inputText, setInputText] = useState<string>("");
-  const [showArrowButton, setShoArrowButton] = useState<boolean>(false);
+  const [showArrowButton, setShowArrowButton] = useState<boolean>(false);
 
   useEffect(() => {
     const scrollListener = () => {
-      if (window.scrollY > 200) setShoArrowButton(true);
-      else setShoArrowButton(false);
+      if (window.scrollY > 200) {
+        setShowArrowButton(true);
+      } else {
+        setShowArrowButton(false);
+      }
     };
 
     window.addEventListener("scroll", scrollListener);
@@ -43,8 +47,8 @@ const Main = ({ children, title }: Props) => {
     <main className="max-lg:rounded-none rounded-[30px] bg-[#F1F5F9] flex-1 px-5 py-7">
       <header className="flex justify-between items-center">
         <h1 className="max-sm:text-[18px] text-[24px]">{title}</h1>
-        <div className="flex gap-5">
-          <div className="hidden md:flex relative rounded-[999px] ">
+        <div className="flex gap-5 ">
+          <div className="hidden md:flex relative rounded-[999px] animate-headerSlidein">
             <form action="" className="flex justify-center items-center">
               <input
                 type="text"
@@ -62,14 +66,18 @@ const Main = ({ children, title }: Props) => {
               </i>
             </div>
           </div>
-
           <Avatar />
         </div>
       </header>
       <p className="border-b-[1px] mt-[18px] mb-[25px] ml-1 w-full border-[#888888] opacity-10"></p>
-      {children}
-      <div className="fixed bottom-5 right-5">
+      <div className="animate-slidein">
+        {children}
+      </div>
+      <div className="fixed bottom-10 right-10">
         <ArrowButton show={showArrowButton} />
+      </div>
+      <div className="fixed bottom-10">
+        <AddButton />
       </div>
     </main>
   );
