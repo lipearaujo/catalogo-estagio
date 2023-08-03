@@ -47,8 +47,10 @@ const SidebarItem = ({
         }`}
         title={tooltip}
       >
-        <i className=" text-2xl">{icon}</i>
-        <p className="w-28 text-left">{name}</p>
+        <div className="animate-headerSlideinLeft flex items-center justify-center gap-8 text-center">
+          <i className="text-2xl">{icon}</i>
+          <p className="w-28 text-left">{name}</p>
+        </div>
       </Link>
       {currentRoute === href || subRoute === true ? (
         <>

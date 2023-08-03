@@ -240,7 +240,7 @@ const Assistenciais = (props: Props) => {
     <div className="flex max-lg:flex-col">
       <Sidebar />
       <Main title="Sistemas Assistenciais">
-        <div className="flex flex-wrap justify-center gap-5 px-8 max-lg:px-0">
+        <div className="flex flex-wrap justify-center gap-5 px-8 max-lg:px-0 ">
           {getInfosFromImages.map((images) => (
             <Cards
               id={images.id}

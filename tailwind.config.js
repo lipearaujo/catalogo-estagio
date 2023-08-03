@@ -14,17 +14,24 @@ module.exports = {
       },
       keyframes: {
         slidein: {
-          "0%": { marginLeft: "10%", width: '100%'},
-          "100%": { marginLeft: "0%", width: '100%'},
+          "0%": { marginTop: "100%", width: '100%', opacity: '75%'},
+          "50%": { opacity: '50%'},
+          "75%": { opacity: '25%'},
+          "100%": { marginTop: "0%", width: '100%', opacity: '25%'},
         },
         headerSlidein: {
           "0%": { marginLeft: "100%", width: '100%'},
           "100%": { marginLeft: "0%", width: '100%'},
         },
+        headerSlideinLeft: {
+          "0%": { marginLeft: "100%", width: '100%'},
+          "100%": { marginLeft: "0%", width: '100%'},
+        },
       },
       animation: {
-        slidein: "slidein 0.8s ease-in",
-        headerSlidein: "headerSlidein 0.8s ease-in"
+        slidein: "slidein 1s ease-in-out",
+        headerSlidein: "headerSlidein 1s ease-in-out",
+        headerSlideinLeft: "headerSlideinLeft 1s ease-in-out"
       },
     },
   },

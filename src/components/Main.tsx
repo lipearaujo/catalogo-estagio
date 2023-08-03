@@ -45,10 +45,10 @@ const Main = ({ children, title }: Props) => {
 
   return (
     <main className="max-lg:rounded-none rounded-[30px] bg-[#F1F5F9] flex-1 px-5 py-7">
-      <header className="flex justify-between items-center">
+      <header className="flex justify-between items-center animate-headerSlidein">
         <h1 className="max-sm:text-[18px] text-[24px]">{title}</h1>
         <div className="flex gap-5 ">
-          <div className="hidden md:flex relative rounded-[999px] animate-headerSlidein">
+          <div className="hidden md:flex relative rounded-[999px] ">
             <form action="" className="flex justify-center items-center">
               <input
                 type="text"
@@ -70,13 +70,11 @@ const Main = ({ children, title }: Props) => {
         </div>
       </header>
       <p className="border-b-[1px] mt-[18px] mb-[25px] ml-1 w-full border-[#888888] opacity-10"></p>
-      <div className="animate-slidein">
-        {children}
-      </div>
-      <div className="fixed bottom-10 right-10">
+      <div className="animate-slidein">{children}</div>
+      <div className="max-md:bottom-7 fixed bottom-10 right-10">
         <ArrowButton show={showArrowButton} />
       </div>
-      <div className="fixed bottom-10">
+      <div className="max-2xl:static max-2xl:mt-2 fixed bottom-10">
         <AddButton />
       </div>
     </main>
