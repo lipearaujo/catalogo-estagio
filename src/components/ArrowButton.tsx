@@ -65,7 +65,7 @@ const ArrowButton = ({ show }: Props) => {
 
   return (
     <button
-      className={show === true ? "block" : "hidden"}
+      className={show === true ? "block animate-showButton" : "opacity-0 ease-in duration-300"}
       onClick={scrollingToTop}
     >
       <IoIosArrowDropupCircle className={ArrowButtonColor()} size={60} />

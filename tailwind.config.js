@@ -27,11 +27,21 @@ module.exports = {
           "0%": { marginLeft: "100%", width: '100%'},
           "100%": { marginLeft: "0%", width: '100%'},
         },
+        showButton: {
+          "0%": { display: "hidden", width: '100%', opacity: '0'},
+          "25%": { display: "block", width: '100%', opacity: '0.25'},
+          "50%": { display: "block", width: '100%', opacity: '0.5'},
+          "75%": { display: "block", width: '100%', opacity: '0.75'},
+          "100%": { display: "block%", width: '100%', opacity: '1'},
+        },
+   
       },
       animation: {
         slidein: "slidein 1s ease-in-out",
         headerSlidein: "headerSlidein 1s ease-in-out",
-        headerSlideinLeft: "headerSlideinLeft 1s ease-in-out"
+        headerSlideinLeft: "headerSlideinLeft 1s ease-in-out",
+        showButton: "showButton 1s ease-in",
+        
       },
     },
   },

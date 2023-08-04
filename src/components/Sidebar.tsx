@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import SidebarItem from "./SidebarItem";
+import { useUserIp } from "@/utils/useUserIp"; 
 
 import logoHU from "../../public/logo-hu.png";
 
@@ -17,114 +18,115 @@ import { SiSpringsecurity } from "react-icons/si";
 import { BiSolidReport } from "react-icons/bi";
 import { AiFillCloseCircle } from "react-icons/ai";
 
+const routesList = [
+  {
+    id: "assistencias",
+    name: "Assistenciais",
+    href: "/assistenciais",
+    subHref: [
+      "/assistenciais/farmacia",
+      "/assistenciais/Sil",
+      "/assistenciais/nutricao",
+      "/assistenciais/pulseiras",
+    ],
+    icon: <GiMedicalPack />,
+    color: "bg-[#c62828]",
+    tooltip: "Sistemas utilizados pela área assistencial",
+  },
+  {
+    id: "administrativos",
+    name: "Administrativos",
+    href: "/administrativos",
+    icon: <FaSuitcase />,
+    color: "bg-[#558b2f]",
+    tooltip: "Sistemas utilizados pela área administrativa",
+  },
+  {
+    id: "ensino",
+    name: "Ensino",
+    href: "/ensino",
+    subHref: ["/ensino/pesquisa"],
+    icon: <RiGraduationCapFill />,
+    color: "bg-[#283593]",
+    tooltip: "Sistemas voltados às áreas de ensino e pesquisa",
+  },
+  {
+    id: "formularios",
+    name: "Formulários",
+    href: "/formularios",
+    icon: <PiClipboardTextFill />,
+    color: "bg-[#00695c]",
+    tooltip: "Acesso a alguns formulários",
+  },
+  {
+    id: "relatorios",
+    name: "Relatórios",
+    href: "/relatorios",
+    subHref: ["/relatorios/paineis"],
+    icon: <BiSolidReport />,
+    color: "bg-[#37474f]",
+    tooltip: "Sistemas usados para a geração de relatórios",
+  },
+  {
+    id: "emails-institucionais",
+    name: "E-mails Inst.",
+    href: "/emails-institucionais",
+    icon: <MdEmail />,
+    color: "bg-[#0277bd]",
+    tooltip: "Acesso aos e-mails institucionais",
+  },
+  {
+    id: "portais",
+    name: "Portais",
+    href: "/portais",
+    icon: <FaNewspaper />,
+    color: "bg-[#4527a0]",
+    tooltip: "Portais institucionais informativos",
+  },
+  {
+    id: "treino-homologacao",
+    name: "Trein. e Homol.",
+    href: "/treino-homologacao",
+    icon: <PiNotebookFill />,
+    color: "bg-[#f9a825]",
+    tooltip:
+      "Ambiente de treinamento e homologação dos sistemas em implantação",
+  },
+  {
+    id: "restritos",
+    name: "Restritos",
+    href: "/restritos",
+    icon: <SiSpringsecurity />,
+    color: "bg-[#263238]",
+    tooltip: "Sistemas restritos ao SGPTI",
+  },
+  {
+    id: "manuais",
+    name: "Manuais",
+    href: "/manuais",
+    icon: <MdCollectionsBookmark />,
+    color: "bg-[#263238]",
+    tooltip: "Manuais dos sistemas utilizados no HU-UFGD",
+  },
+  {
+    id: "ajuda",
+    name: "Ajuda",
+    href: "/ajuda",
+    icon: <MdHelpCenter />,
+    color: "bg-[#263238]",
+    tooltip: "Ajuda e sobre o Catálogo de Sistemas",
+  },
+];
+
 type Props = {};
 
 const Sidebar = (props: Props) => {
   const [menuOpen, setMenuOpen] = useState<Boolean>(false);
+  const ip = useUserIp();
 
   const handleNav = () => {
     setMenuOpen(!menuOpen);
   };
-
-  const routesList = [
-    {
-      id: "assistencias",
-      name: "Assistenciais",
-      href: "/assistenciais",
-      subHref: [
-        "/assistenciais/farmacia",
-        "/assistenciais/Sil",
-        "/assistenciais/nutricao",
-        "/assistenciais/pulseiras",
-      ],
-      icon: <GiMedicalPack />,
-      color: "bg-[#c62828]",
-      tooltip: "Sistemas utilizados pela área assistencial",
-    },
-    {
-      id: "administrativos",
-      name: "Administrativos",
-      href: "/administrativos",
-      icon: <FaSuitcase />,
-      color: "bg-[#558b2f]",
-      tooltip: "Sistemas utilizados pela área administrativa",
-    },
-    {
-      id: "ensino",
-      name: "Ensino",
-      href: "/ensino",
-      subHref: ["/ensino/pesquisa"],
-      icon: <RiGraduationCapFill />,
-      color: "bg-[#283593]",
-      tooltip: "Sistemas voltados às áreas de ensino e pesquisa",
-    },
-    {
-      id: "formularios",
-      name: "Formulários",
-      href: "/formularios",
-      icon: <PiClipboardTextFill />,
-      color: "bg-[#00695c]",
-      tooltip: "Acesso a alguns formulários",
-    },
-    {
-      id: "relatorios",
-      name: "Relatórios",
-      href: "/relatorios",
-      subHref: ["/relatorios/paineis"],
-      icon: <BiSolidReport />,
-      color: "bg-[#37474f]",
-      tooltip: "Sistemas usados para a geração de relatórios",
-    },
-    {
-      id: "emails-institucionais",
-      name: "E-mails Inst.",
-      href: "/emails-institucionais",
-      icon: <MdEmail />,
-      color: "bg-[#0277bd]",
-      tooltip: "Acesso aos e-mails institucionais",
-    },
-    {
-      id: "portais",
-      name: "Portais",
-      href: "/portais",
-      icon: <FaNewspaper />,
-      color: "bg-[#4527a0]",
-      tooltip: "Portais institucionais informativos",
-    },
-    {
-      id: "treino-homologacao",
-      name: "Trein. e Homol.",
-      href: "/treino-homologacao",
-      icon: <PiNotebookFill />,
-      color: "bg-[#f9a825]",
-      tooltip:
-        "Ambiente de treinamento e homologação dos sistemas em implantação",
-    },
-    {
-      id: "restritos",
-      name: "Restritos",
-      href: "/restritos",
-      icon: <SiSpringsecurity />,
-      color: "bg-[#263238]",
-      tooltip: "Sistemas restritos ao SGPTI",
-    },
-    {
-      id: "manuais",
-      name: "Manuais",
-      href: "/manuais",
-      icon: <MdCollectionsBookmark />,
-      color: "bg-[#263238]",
-      tooltip: "Manuais dos sistemas utilizados no HU-UFGD",
-    },
-    {
-      id: "ajuda",
-      name: "Ajuda",
-      href: "/ajuda",
-      icon: <MdHelpCenter />,
-      color: "bg-[#263238]",
-      tooltip: "Ajuda e sobre o Catálogo de Sistemas",
-    },
-  ];
 
   return (
     <aside className="w-[230px] max-[1023px]:w-full">
@@ -168,7 +170,7 @@ const Sidebar = (props: Props) => {
       <p className="hidden lg:block border-b-[1px] mt-8 mb-8 ml-1 w-11/12 border-[#ccc] opacity-10"></p>
       <footer className="hidden lg:flex flex-col items-start gap-2 px-5 text-[14px] rounded-[10px] text-white">
         <p>
-          <strong>Seu IP é: 10.18.129.197</strong>
+          <strong>Seu IP é: {ip}</strong>
         </p>
         <p>
           <strong>© Catálogo de Sistemas</strong>
@@ -207,7 +209,7 @@ const Sidebar = (props: Props) => {
           <p className="lg:block border-b-[1px] mt-4 mb-4 ml-1 w-full border-[#ccc] opacity-10"></p>
           <footer className="flex flex-col items-center gap-2 text-[14px] rounded-[10px] text-start text-black">
             <p className="">
-              <strong>Seu IP é: 10.18.129.197</strong>
+              <strong>Seu IP é: {ip}</strong>
             </p>
             <p>
               <strong>© Catálogo de Sistemas</strong>
