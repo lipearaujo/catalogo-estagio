@@ -3,11 +3,15 @@ import Link from "next/link";
 
 import { ImPhone } from "react-icons/im";
 import { FaUserCircle, FaSignInAlt } from "react-icons/fa";
-import { BiSolidLockAlt } from "react-icons/bi";
+import { BiSolidLockAlt, BiLogOut } from "react-icons/bi";
+import { useSession } from "next-auth/react";
+import { signIn, signOut } from "next-auth/react";
 
 type Props = {};
 
 const Avatar = (props: Props) => {
+  const { data: session } = useSession();
+
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   const showMenu = () => {
@@ -27,8 +31,8 @@ const Avatar = (props: Props) => {
         }
       >
         <div className="h-full p-3">
-          <p className="text-base">...</p>
-          <p className="text-sm">...</p>
+          <p className="text-base">{session ? session.user?.name : ""}</p>
+          <p className="text-sm">{session ? session.user?.email : ""}</p>
         </div>
         <p className="border-b-[1px]  w-full border-[#ececec]"></p>
         <div className="flex flex-col gap-2 h-full p-2">
@@ -56,10 +60,17 @@ const Avatar = (props: Props) => {
         </div>
         <p className="border-b-[1px]  w-full border-[#ececec]"></p>
         <div className="flex items-center justify-start p-2">
-          <div className="w-full p-2 flex items-center justify-start gap-2 hover:rounded-[5px] hover:bg-[#f0efef] ease-in-out duration-200">
-            <FaSignInAlt />
-            <button>Entrar</button>
-          </div>
+          {session ? (
+            <div className="w-full p-2 flex items-center justify-start gap-2 hover:rounded-[5px] hover:bg-[#f0efef] ease-in-out duration-200">
+              <BiLogOut />
+              <button onClick={() => signOut()}>Sair</button>
+            </div>
+          ) : (
+            <div className="w-full p-2 flex items-center justify-start gap-2 hover:rounded-[5px] hover:bg-[#f0efef] ease-in-out duration-200">
+              <FaSignInAlt />
+              <button onClick={() => signIn()}>Entrar</button>
+            </div>
+          )}
         </div>
       </div>
     </nav>

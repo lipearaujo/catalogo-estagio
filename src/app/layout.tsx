@@ -4,6 +4,7 @@ import "./globals.css";
 import { usePathname } from "next/navigation";
 import type { Metadata } from "next";
 import { Inter, Open_Sans } from "next/font/google";
+import { AuthProvider } from "@/providers/auth-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 const openSans = Open_Sans({
@@ -69,7 +70,7 @@ export default function RootLayout({
   };
 
   return (
-    <>
+    <AuthProvider>
       <title>Catálogo de Sistemas</title>
       <html lang="en">
         <body
@@ -80,6 +81,6 @@ export default function RootLayout({
           {children}
         </body>
       </html>
-    </>
+    </AuthProvider>
   );
 }

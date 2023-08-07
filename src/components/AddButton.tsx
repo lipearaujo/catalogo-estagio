@@ -58,7 +58,7 @@ const AddButton = () => {
 
   return (
     <button>
-      <Link href="/private">
+      <Link href="/addNewCard">
         <BsPlusCircleFill className={AddButtonColor()} size={50} />
       </Link>
     </button>

@@ -5,9 +5,10 @@ import React, { useState, useEffect } from "react";
 import { IoSearchCircleSharp } from "react-icons/io5";
 
 import ArrowButton from "./ArrowButton";
-
-import Avatar from "./Avatar";
 import AddButton from "./AddButton";
+import Avatar from "./Avatar";
+
+import { useSession } from "next-auth/react";
 
 type Props = {
   title: string;
@@ -17,6 +18,8 @@ type Props = {
 const Main = ({ children, title }: Props) => {
   const [inputText, setInputText] = useState<string>("");
   const [showArrowButton, setShowArrowButton] = useState<boolean>(false);
+
+  const { data: session } = useSession();
 
   useEffect(() => {
     const scrollListener = () => {
@@ -74,9 +77,14 @@ const Main = ({ children, title }: Props) => {
       <div className="max-md:bottom-7 fixed bottom-10 right-10">
         <ArrowButton show={showArrowButton} />
       </div>
-      <div className="max-2xl:static max-2xl:mt-2 fixed bottom-10">
-        <AddButton />
-      </div>
+
+      {session ? (
+        <div className="max-2xl:static max-2xl:mt-2 fixed bottom-10">
+          <AddButton />
+        </div>
+      ) : (
+        ""
+      )}
     </main>
   );
 };
