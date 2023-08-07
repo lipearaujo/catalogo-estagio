@@ -6,7 +6,7 @@ type Props = {}
 const AddNewCard = (props: Props) => {
   
   return (
-    <div>AddNewCard</div>
+    <h1>Private Page</h1>
   )
 }
 

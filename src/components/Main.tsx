@@ -74,9 +74,9 @@ const Main = ({ children, title }: Props) => {
       <div className="max-md:bottom-7 fixed bottom-10 right-10">
         <ArrowButton show={showArrowButton} />
       </div>
-{/*       <div className="max-2xl:static max-2xl:mt-2 fixed bottom-10">
+      <div className="max-2xl:static max-2xl:mt-2 fixed bottom-10">
         <AddButton />
-      </div> */}
+      </div>
     </main>
   );
 };
