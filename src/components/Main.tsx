@@ -1,14 +1,13 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
 
 import { IoSearchCircleSharp } from "react-icons/io5";
 
 import ArrowButton from "./ArrowButton";
 import AddButton from "./AddButton";
 import Avatar from "./Avatar";
-
-import { useSession } from "next-auth/react";
 
 type Props = {
   title: string;

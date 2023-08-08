@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 import { ImPhone } from "react-icons/im";
 import { FaUserCircle, FaSignInAlt } from "react-icons/fa";
 import { BiSolidLockAlt, BiLogOut } from "react-icons/bi";
-import { useSession } from "next-auth/react";
+
 import { signIn, signOut } from "next-auth/react";
 
 type Props = {};

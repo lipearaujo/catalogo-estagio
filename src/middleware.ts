@@ -9,7 +9,8 @@ const middleware = (request: NextRequestWithAuth) => {
   console.log("[MIDDLEWARE_NEXTAUTH_TOKEN: ", request.nextauth.token);
 
   const isPrivateRoutes = request.nextUrl.pathname.startsWith("/restritos");
-  const isAdminUser = request.nextauth.token?.role === "admin";
+  const isAdminUser = request.nextauth.token?.role === "ADMIN";
+  console.log(isAdminUser);
 
   if (isPrivateRoutes && !isAdminUser) {
     return NextResponse.rewrite(new URL("/denied", request.url));
@@ -21,5 +22,5 @@ const callbackOptions: NextAuthMiddlewareOptions = {};
 export default withAuth(middleware, callbackOptions);
 
 export const config = {
-  matcher: ["/restritos"],
+  matcher: "/restritos",
 };
