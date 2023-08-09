@@ -1,15 +1,23 @@
--- CreateEnum
-CREATE TYPE "Role" AS ENUM ('USER', 'ADMIN');
-
 -- CreateTable
 CREATE TABLE "User" (
     "id" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
     "name" TEXT NOT NULL,
-    "role" "Role" NOT NULL DEFAULT 'USER',
+    "role" TEXT NOT NULL,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Card" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "text" TEXT NOT NULL,
+    "src" TEXT NOT NULL,
+    "href" TEXT NOT NULL,
+
+    CONSTRAINT "Card_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex

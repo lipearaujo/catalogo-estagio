@@ -15,10 +15,13 @@ model User {
   email    String @unique
   password String
   name     String
-  role     Role   @default(USER)
+  role     String
 }
 
-enum Role {
-  USER
-  ADMIN
+model Card {
+  id       String  @id @default(uuid())
+  name     String
+  text     String
+  src      String
+  href     String
 }

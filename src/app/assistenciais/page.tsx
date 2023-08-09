@@ -1,10 +1,8 @@
 import React from "react";
-import { GetServerSideProps } from "next";
 
 import Main from "@/components/Main";
 import Sidebar from "@/components/Sidebar";
 import Cards from "@/components/Cards";
-import AddButton from "@/components/AddButton";
 
 //importação das imagens Sistemas Assistenciais
 import AGHU from "../../../public/images/assistenciais/aghux.png";
@@ -234,9 +232,7 @@ const getInfosFromImages = [
   },
 ];
 
-type Props = {};
-
-const Assistenciais = (props: Props) => {
+const Assistenciais = () => {
   return (
     <div className="flex max-lg:flex-col">
       <Sidebar />
@@ -253,30 +249,9 @@ const Assistenciais = (props: Props) => {
             />
           ))}
         </div>
-
-        {/*        <div className="flex items-center justify-end  ">
-          <AddButton />
-          </div> */}
       </Main>
     </div>
   );
 };
 
 export default Assistenciais;
-
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
-  let ip = req.headers["x-real-ip"];
-  if (!ip) {
-    const forwardedFor = req.headers["x-forwarded-for"];
-    if (Array.isArray(forwardedFor)) {
-      ip = forwardedFor.at(0);
-    } else {
-      ip = forwardedFor?.split(",").at(0) ?? "Unknown";
-    }
-  }
-  return {
-    props: {
-      ip,
-    },
-  };
-};

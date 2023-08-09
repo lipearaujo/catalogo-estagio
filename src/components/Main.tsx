@@ -2,9 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
-
 import { IoSearchCircleSharp } from "react-icons/io5";
-
 import ArrowButton from "./ArrowButton";
 import AddButton from "./AddButton";
 import Avatar from "./Avatar";
@@ -18,6 +16,7 @@ const Main = ({ children, title }: Props) => {
   const [inputText, setInputText] = useState<string>("");
   const [showArrowButton, setShowArrowButton] = useState<boolean>(false);
 
+  
   const { data: session } = useSession();
 
   useEffect(() => {

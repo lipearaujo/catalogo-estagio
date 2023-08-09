@@ -1,24 +1,15 @@
-"use client"
-import React, {useState} from 'react'
-import { redirect } from "next/navigation";
-import { useSession } from "next-auth/react";
+"use client";
+import React from 'react'
+import RegisterCardForm from './form';
 
 type Props = {}
 
 const AddNewCard = (props: Props) => {
-  const { status } = useSession({
-    required: true,
-    onUnauthenticated() {
-      redirect("/api/auth/signin");
-    },
-  });
-
-  if (status === "loading") {
-    return <p className="text-white">Loading....</p>;
-  }
-  
   return (
-    <h1 className='text-white'>Private Page</h1>
+    <div className='flex flex-col gap-4 justify-center items-center h-full'>
+        <h1 className='font-bold text-3xl text-white'>Registrar Card</h1>
+        <RegisterCardForm />
+    </div>
   )
 }
 
