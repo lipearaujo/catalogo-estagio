@@ -15,8 +15,6 @@ const main = async () => {
       role: "USER",
     },
   });
-
-  console.log({ user });
 };
 main()
   .then(() => prisma.$disconnect())

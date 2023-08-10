@@ -16,7 +16,6 @@ type Props = {
 const Card = ({ id, text, idColor, href, children }: Props) => {
   const [flip, setFlip] = useState<boolean>(false);
 
-  //const cardClass = `w-[300px] h-[332px] border border-[#dbdbd9] bg-[#fff] rounded-3xl flex hover:border-[#d40f08] ease-in duration-300`
   const cardClass = "w-[300px] h-[332px] border border-[#dbdbd9] bg-[#fff] rounded-3xl flex hover:shadow-lg hover:shadow-[#ababab] ease-in-out duration-300";
   const flipClass = "[transform-style:preserve-3d] [transform:rotateY(180deg)]";
 

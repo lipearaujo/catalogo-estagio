@@ -9,6 +9,8 @@ const RegisterCardForm = (props: Props) => {
   let [text, setText] = useState<string>("");
   let [src, setSrc] = useState<string>("");
   let [href, setHref] = useState<string>("");
+  let [alt, setAltImg] = useState<string>("");
+  let [category, setCategory] = useState<string>("");
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,7 +19,7 @@ const RegisterCardForm = (props: Props) => {
     try {
       const res = await fetch("/api/newCard", {
         method: "POST",
-        body: JSON.stringify({ name, text, src, href }),
+        body: JSON.stringify({ name, text, src, href, alt, category }),
         headers: {
           "Content-Type": "application/json",
         },
@@ -34,6 +36,8 @@ const RegisterCardForm = (props: Props) => {
       alert(error.message);
     }
   };
+
+  
 
   return (
     <form
@@ -81,11 +85,34 @@ const RegisterCardForm = (props: Props) => {
       <input
         className="w-[18rem] h-[40px] border-[5px] border-slate-300 outline-0 rounded-[999px] bg-slate-300 pl-3 focus:w-[22rem] focus:border-5 focus:border-slate-500 ease-in-out duration-300"
         required
+        placeholder="http://..."
         type="text"
         name="href"
         value={href}
         onChange={(e: React.ChangeEvent<HTMLInputElement>): void =>
           setHref(e.target.value)
+        }
+      />
+      <label htmlFor="altImg">Alt Imagem</label>
+      <input
+        className="w-[18rem] h-[40px] border-[5px] border-slate-300 outline-0 rounded-[999px] bg-slate-300 pl-3 focus:w-[22rem] focus:border-5 focus:border-slate-500 ease-in-out duration-300"
+        required
+        type="text"
+        name="altImg"
+        value={alt}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>): void =>
+          setAltImg(e.target.value)
+        }
+      />
+      <label htmlFor="category">Categoria</label>
+      <input
+        className="w-[18rem] h-[40px] border-[5px] border-slate-300 outline-0 rounded-[999px] bg-slate-300 pl-3 focus:w-[22rem] focus:border-5 focus:border-slate-500 ease-in-out duration-300"
+        required
+        type="text"
+        name="category"
+        value={category}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>): void =>
+          setCategory(e.target.value)
         }
       />
 

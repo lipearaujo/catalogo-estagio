@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { prisma } from "@/lib/prisma";
+import { api } from "../../lib/axios";
 
 import Main from "@/components/Main";
 import Sidebar from "@/components/Sidebar";
@@ -232,7 +234,15 @@ const getInfosFromImages = [
   },
 ];
 
-const Assistenciais = () => {
+type Props = {};
+
+const Assistenciais = async () => {
+  const allCards = await prisma.card.findMany({
+    where: {
+      category: "assistenciais",
+    },
+  });
+
   return (
     <div className="flex max-lg:flex-col">
       <Sidebar />
@@ -247,7 +257,18 @@ const Assistenciais = () => {
               idColor={images.idColor}
               href={images.href}
             />
-          ))}
+          ))} 
+      {/*     {allCards.map((card) => (
+            <Cards
+              id={card.name}
+              //src={card.src}
+              src=""
+              text={card.text}
+              href={card.href}
+              idColor="text-red"
+              alt={card.alt}
+            />
+          ))} */}
         </div>
       </Main>
     </div>

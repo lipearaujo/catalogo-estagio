@@ -3,11 +3,13 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   try {
-    const { name, text, src, href } = (await req.json()) as {
+    const { name, text, src, href, alt, category } = (await req.json()) as {
       name: string;
       text: string;
       src: string;
       href: string;
+      alt: string;
+      category: string;
     };
 
     const card = await prisma.card.create({
@@ -16,6 +18,8 @@ export async function POST(req: Request) {
         text,
         src,
         href,
+        alt, 
+        category,
       },
     });
 
@@ -25,6 +29,8 @@ export async function POST(req: Request) {
         text: card.text,
         src: card.src,
         href: card.href,
+        alt: card.alt,
+        category: card.category,
       },
     });
   } catch (error: any) {

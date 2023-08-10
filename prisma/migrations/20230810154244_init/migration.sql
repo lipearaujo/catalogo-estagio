@@ -16,6 +16,8 @@ CREATE TABLE "Card" (
     "text" TEXT NOT NULL,
     "src" TEXT NOT NULL,
     "href" TEXT NOT NULL,
+    "alt" TEXT NOT NULL,
+    "category" TEXT NOT NULL,
 
     CONSTRAINT "Card_pkey" PRIMARY KEY ("id")
 );
