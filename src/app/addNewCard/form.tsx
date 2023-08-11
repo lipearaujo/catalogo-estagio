@@ -1,10 +1,10 @@
 "use client";
-import React, { ChangeEvent, useState } from "react";
+import React, { useState } from "react";
 
 type Props = {};
 
 const RegisterCardForm = (props: Props) => {
-  let [loading, setLoading] = useState(false);
+  let [loading, setLoading] = useState<boolean>(false);
   let [name, setName] = useState<string>("");
   let [text, setText] = useState<string>("");
   let [src, setSrc] = useState<string>("");
@@ -36,8 +36,6 @@ const RegisterCardForm = (props: Props) => {
       alert(error.message);
     }
   };
-
-  
 
   return (
     <form

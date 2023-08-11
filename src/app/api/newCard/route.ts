@@ -18,7 +18,7 @@ export async function POST(req: Request) {
         text,
         src,
         href,
-        alt, 
+        alt,
         category,
       },
     });
@@ -43,3 +43,4 @@ export async function POST(req: Request) {
     );
   }
 }
+

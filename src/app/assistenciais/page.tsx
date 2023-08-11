@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { prisma } from "@/lib/prisma";
-import { api } from "../../lib/axios";
 
 import Main from "@/components/Main";
 import Sidebar from "@/components/Sidebar";
@@ -242,13 +241,13 @@ const Assistenciais = async () => {
       category: "assistenciais",
     },
   });
-
+  
   return (
     <div className="flex max-lg:flex-col">
       <Sidebar />
       <Main title="Sistemas Assistenciais">
         <div className="flex flex-wrap justify-center gap-5 px-8 max-lg:px-0 ">
-          {getInfosFromImages.map((images) => (
+{/*           {getInfosFromImages.map((images) => (
             <Cards
               id={images.id}
               src={images.src}
@@ -257,10 +256,11 @@ const Assistenciais = async () => {
               idColor={images.idColor}
               href={images.href}
             />
-          ))} 
-      {/*     {allCards.map((card) => (
+          ))}  */}
+          {allCards.map((card) => (
             <Cards
-              id={card.name}
+              id={card.id}
+              name={card.name}
               //src={card.src}
               src=""
               text={card.text}
@@ -268,7 +268,7 @@ const Assistenciais = async () => {
               idColor="text-red"
               alt={card.alt}
             />
-          ))} */}
+          ))}
         </div>
       </Main>
     </div>

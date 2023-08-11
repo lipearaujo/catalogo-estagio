@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import SidebarItem from "./SidebarItem";
-import { useUserIp } from "@/utils/useUserIp"; 
+import { useUserIp } from "@/utils/useUserIp";
 
 import logoHU from "../../public/logo-hu.png";
 
@@ -25,7 +25,7 @@ const routesList = [
     href: "/assistenciais",
     subHref: [
       "/assistenciais/farmacia",
-      "/assistenciais/Sil",
+      "/assistenciais/sil",
       "/assistenciais/nutricao",
       "/assistenciais/pulseiras",
     ],
