@@ -6,6 +6,9 @@ import { IoSearchCircleSharp } from "react-icons/io5";
 import ArrowButton from "./ArrowButton";
 import AddButton from "./AddButton";
 import Avatar from "./Avatar";
+import { prisma } from "@/lib/prisma";
+import { GetServerSideProps, GetStaticProps } from "next";
+import { data } from "autoprefixer";
 
 type Props = {
   title: string;
@@ -16,7 +19,6 @@ const Main = ({ children, title }: Props) => {
   const [inputText, setInputText] = useState<string>("");
   const [showArrowButton, setShowArrowButton] = useState<boolean>(false);
 
-  
   const { data: session } = useSession();
 
   useEffect(() => {
@@ -76,7 +78,7 @@ const Main = ({ children, title }: Props) => {
         <ArrowButton show={showArrowButton} />
       </div>
 
-      {session ? (
+      {session && session?.user?.role === "ADMIN" ? (
         <div className="max-2xl:static max-2xl:mt-2 fixed bottom-10">
           <AddButton />
         </div>

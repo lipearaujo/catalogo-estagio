@@ -51,7 +51,7 @@ export const authOptions: NextAuthOptions = {
         user: {
           ...session.user,
           id: token.id,
-          randomKey: token.randomKey,
+          role: token.role,
         },
       };
     },
@@ -61,9 +61,8 @@ export const authOptions: NextAuthOptions = {
         const u = user as unknown as any;
         return {
           ...token,
-          role: u.role,
           id: u.id,
-          randomKey: u.randomKey,
+          role: u.role,
         };
       }
       return token;

@@ -241,13 +241,13 @@ const Assistenciais = async () => {
       category: "assistenciais",
     },
   });
-  
+
   return (
     <div className="flex max-lg:flex-col">
       <Sidebar />
       <Main title="Sistemas Assistenciais">
         <div className="flex flex-wrap justify-center gap-5 px-8 max-lg:px-0 ">
-{/*           {getInfosFromImages.map((images) => (
+          {/*           {getInfosFromImages.map((images) => (
             <Cards
               id={images.id}
               src={images.src}

@@ -58,10 +58,12 @@ const Card = ({ id, name, text, idColor, href, children }: Props) => {
       <div className="w-full flex flex-col gap-6 ">
         <div
           className={`${
-            session ? "w-full flex justify-between" : "w-full flex justify-end"
+            session && session?.user?.role === "ADMIN"
+              ? "w-full flex justify-between"
+              : "w-full flex justify-end"
           }`}
         >
-          {session ? (
+          {session && session?.user?.role === "ADMIN" ? (
             <div className="mt-[30px] ml-[30px] flex gap-2">
               <button onClick={updateCard}>
                 <i className="text-[20px]">
