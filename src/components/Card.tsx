@@ -21,6 +21,7 @@ type Props = {
 
 const Card = ({ id, name, text, idColor, href, children }: Props) => {
   const [flip, setFlip] = useState<boolean>(false);
+
   const { data: session } = useSession();
   const router = useRouter();
   const currentRoute = usePathname();
@@ -51,8 +52,6 @@ const Card = ({ id, name, text, idColor, href, children }: Props) => {
     }
   };
 
-  const updateCard = async () => {};
-
   const Front = () => {
     return (
       <div className="w-full flex flex-col gap-6 ">
@@ -65,11 +64,11 @@ const Card = ({ id, name, text, idColor, href, children }: Props) => {
         >
           {session && session?.user?.role === "ADMIN" ? (
             <div className="mt-[30px] ml-[30px] flex gap-2">
-              <button onClick={updateCard}>
+              <Link href={`/updateCard/${id}`}>
                 <i className="text-[20px]">
                   <HiPencilSquare />
                 </i>
-              </button>
+              </Link>
               <button onClick={() => deleteCard(id)}>
                 <i className="text-[20px]">
                   <BsFillTrashFill />
