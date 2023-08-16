@@ -22,5 +22,16 @@ CREATE TABLE "Card" (
     CONSTRAINT "Card_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "MainCard" (
+    "id" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+    "subtitle" TEXT,
+    "text" TEXT NOT NULL,
+    "category" TEXT NOT NULL,
+
+    CONSTRAINT "MainCard_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");

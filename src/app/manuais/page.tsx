@@ -1,18 +1,25 @@
 import Main from '@/components/Main'
 import MainCard from '@/components/MainCard'
 import Sidebar from '@/components/Sidebar'
+import { prisma } from '@/lib/prisma'
 import Link from 'next/link'
 import React from 'react'
 
 type Props = {}
 
-const Manuais = (props: Props) => {
+const Manuais = async (props: Props) => {
+  const allCards = await prisma.mainCard.findMany({
+    where: {
+      category: "manuais",
+    },
+  });
+  
   return (
     <div className="flex max-lg:flex-col">
         <Sidebar />
         <Main title='Manuais'>
           <div className='flex flex-col gap-5'>
-            <MainCard title='Documentos Institucionais'>
+            <MainCard title='Documentos Institucionais' id=''>
               <ul className='mx-auto w-10/12 list-disc text-[#455A64]'>
                 <li className='text-[14px] py-1'>
                   <strong><Link href='https://www.gov.br/ebserh/pt-br/hospitais-universitarios/regiao-centro-oeste/hu-ufgd/acesso-a-informacao/pops-protocolos-e-processos/superintendencia-1'>Documentos Publicados</Link></strong>
@@ -34,7 +41,7 @@ const Manuais = (props: Props) => {
               </ul>
             </MainCard>
 
-            <MainCard title='Certificado Digital'>
+            <MainCard title='Certificado Digital' id=''>
               <ul className='mx-auto w-10/12 list-disc text-[#455A64]'>
                   <li className='text-[14px] py-1'>
                     Manuais de solicitação de certificado digital:
@@ -60,7 +67,7 @@ const Manuais = (props: Props) => {
                 </ul>
             </MainCard>
 
-            <MainCard title='AGHUX'>
+            <MainCard title='AGHUX' id=''>
               <p className="text-[14px] text-[#455A64] mx-auto w-11/12">Acesse no menu <strong><Link href='/portais'>Portais</Link></strong>, desse catálogo, o portal do AGHUX contendo os detalhes de cada módulo do sistema. Abaixo você pode acessar os manuais de cada um deles, usados no HU-UFGD:</p>
               <h5 className='text-[20px] mx-auto font-bold w-11/12 mt-3 text-[#455A64]'>Módulos:</h5>
               <ul className='mx-auto w-10/12 list-disc text-[#455A64]'>
@@ -125,7 +132,7 @@ const Manuais = (props: Props) => {
               </ul>
             </MainCard>
 
-            <MainCard title='SEI!'>
+            <MainCard title='SEI!' id=''>
               <p className="text-[14px] text-[#455A64] mx-auto w-11/12">Abaixo você encontra os manuais, disponibilizados pela Ebserh Sede e Enap, o Procedimento Operacional Padrão e os cursos (Ebserh e Enap) do Sistema Eletrônico de Informações (SEI!):</p>
               <h5 className='text-[20px] mx-auto font-bold w-11/12 mt-3 text-[#455A64]'>Manuais e POP:</h5>
               <ul className='mx-auto w-10/12 list-disc text-[#455A64] font-bold'>
@@ -152,7 +159,7 @@ const Manuais = (props: Props) => {
               </ul>
             </MainCard>
 
-            <MainCard title='Informática na Saúde'>
+            <MainCard title='Informática na Saúde' id=''>
               <ul className='mx-auto w-10/12 list-disc text-[#455A64] font-bold'>
                 <li className='text-[14px] py-1'>
                   <Link href='http://sistemas.hugd.ebserh.gov.br/catalogo/arquivos/setisd/manual-instalacao-cliente-vpn-windows.pdf'>Manual de Instalação do Cliente VPN;</Link>
@@ -185,6 +192,17 @@ const Manuais = (props: Props) => {
                 </li>
               </ul>
             </MainCard>
+
+            {allCards.map((card) => (
+            <MainCard
+              id={card.id}
+              title={card.title}
+              subtitle={card.subtitle}
+              text={card.text}
+            >
+              {""}
+            </MainCard>
+          ))}
           </div>
         </Main>
     </div>

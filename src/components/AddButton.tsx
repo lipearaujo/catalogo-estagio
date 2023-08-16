@@ -58,7 +58,15 @@ const AddButton = () => {
 
   return (
     <button>
-      <Link href="/addNewCard">
+      <Link
+        href={
+          currentRoute === "/" ||
+          currentRoute === "/manuais" ||
+          currentRoute === "/ajuda"
+            ? "/addNewMainCard"
+            : "/addNewCard"
+        }
+      >
         <BsPlusCircleFill className={AddButtonColor()} size={50} />
       </Link>
     </button>

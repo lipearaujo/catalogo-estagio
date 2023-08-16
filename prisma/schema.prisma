@@ -27,3 +27,11 @@ model Card {
   alt      String
   category String
 }
+
+model MainCard {
+  id       String  @id @default(uuid())
+  title    String
+  subtitle String?
+  text     String
+  category String
+}
