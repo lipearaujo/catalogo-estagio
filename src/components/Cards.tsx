@@ -10,13 +10,13 @@ type Props = {
   src: string | StaticImageData;
   text: string;
   alt: string;
-  idColor: string;
+  idColor?: string;
   href: string
 };
 
 const Cards = ({ id, name, src, text, alt, idColor, href }: Props) => {
   return (
-    <Card id={id} name={name} text={text} idColor={idColor} href={href}>
+    <Card id={id} name={name} text={text} idColor={idColor || 'text-[#455A64]'} href={href}>
       <Image src={src} width={230} height={120} alt={alt} />
     </Card>
   );

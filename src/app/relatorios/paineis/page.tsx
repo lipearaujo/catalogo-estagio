@@ -1,8 +1,5 @@
-"use client";
-
 import React from "react";
-
-import { usePathname } from "next/navigation";
+import { prisma } from "@/lib/prisma";
 
 import Main from "@/components/Main";
 import Sidebar from "@/components/Sidebar";
@@ -111,8 +108,12 @@ const getInfosFromImages = [
 
 type Props = {};
 
-const Paineis = (props: Props) => {
-  const currentRoute = usePathname();
+const Paineis = async (props: Props) => {
+  const allCards = await prisma.card.findMany({
+    where: {
+      category: "relatorios/paineis",
+    },
+  });
 
   return (
     <div className="flex max-lg:flex-col">
@@ -122,6 +123,7 @@ const Paineis = (props: Props) => {
           {getInfosFromImages.map((images) => (
             <Cards
               id={images.id}
+              name={images.id}
               src={images.src}
               text={images.text}
               alt={images.alt}
@@ -129,11 +131,17 @@ const Paineis = (props: Props) => {
               href={images.href}
             />
           ))}
+          {/*           {allCards.map((card) => (
+            <Cards
+              id={card.id}
+              name={card.name}
+              src={card.src}
+              text={card.text}
+              alt={card.alt}
+              href={card.href}
+            />
+          ))} */}
         </div>
-
-        {/*        <div className="flex items-center justify-end  ">
-            <AddButton />
-            </div> */}
       </Main>
     </div>
   );

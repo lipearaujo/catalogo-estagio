@@ -1,13 +1,11 @@
-"use client";
 import React from 'react'
-
-import { usePathname } from "next/navigation";
 
 import Main from "@/components/Main";
 import Sidebar from "@/components/Sidebar";
 import Cards from "@/components/Cards";
 
 import Pulseira from '../../../../public/images/assistenciais/pulseiras/pulseiras.png'
+import { prisma } from '@/lib/prisma';
 
 const images = [Pulseira]
 
@@ -56,8 +54,12 @@ const getInfosFromImages = [
 
 type Props = {}
 
-const Pulseiras = (props: Props) => {
-    const currentRoute = usePathname();
+const Pulseiras = async (props: Props) => {
+  const allCards = await prisma.card.findMany({
+    where: {
+      category: "assistenciais/pulseiras",
+    },
+  });
 
     return (
       <div className="flex max-lg:flex-col">
@@ -67,6 +69,7 @@ const Pulseiras = (props: Props) => {
             {getInfosFromImages.map((images) => (
               <Cards
                 id={images.id}
+                name={images.id}
                 src={images.src}
                 text={images.text}
                 alt={images.alt}
@@ -74,11 +77,19 @@ const Pulseiras = (props: Props) => {
                 href={images.href}
               />
             ))}
+                      {/*           {allCards.map((card) => (
+            <Cards
+              id={card.id}
+              name={card.name}
+              src={card.src}
+              text={card.text}
+              alt={card.alt}
+              href={card.href}
+            />
+          ))} */}
           </div>
   
-          {/*        <div className="flex items-center justify-end  ">
-            <AddButton />
-            </div> */}
+
         </Main>
       </div>
     );

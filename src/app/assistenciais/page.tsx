@@ -247,17 +247,18 @@ const Assistenciais = async () => {
       <Sidebar />
       <Main title="Sistemas Assistenciais">
         <div className="flex flex-wrap justify-center gap-5 px-8 max-lg:px-0 ">
-          {/*           {getInfosFromImages.map((images) => (
+                     {getInfosFromImages.map((images) => (
             <Cards
               id={images.id}
+              name={images.id}
               src={images.src}
               text={images.text}
               alt={images.alt}
               idColor={images.idColor}
               href={images.href}
             />
-          ))}  */}
-          {allCards.map((card) => (
+          ))}  
+{/*           {allCards.map((card) => (
             <Cards
               id={card.id}
               name={card.name}
@@ -265,10 +266,9 @@ const Assistenciais = async () => {
               src=""
               text={card.text}
               href={card.href}
-              idColor="text-red"
               alt={card.alt}
             />
-          ))}
+          ))} */}
         </div>
       </Main>
     </div>

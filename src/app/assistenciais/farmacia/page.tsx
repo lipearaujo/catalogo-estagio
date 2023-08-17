@@ -1,8 +1,4 @@
-"use client";
-
 import React from "react";
-
-import { usePathname } from "next/navigation";
 
 import Main from "@/components/Main";
 import Sidebar from "@/components/Sidebar";
@@ -17,6 +13,7 @@ import ControleAntimicrobiano from "../../../../public/images/assistenciais/farm
 import TagUDF from "../../../../public/images/assistenciais/farmacia/tag-udf.png";
 import TicketsDispnsacao from "../../../../public/images/assistenciais/farmacia/ticket-dispensacao.png";
 import TicketsTurnos from "../../../../public/images/assistenciais/farmacia/ticket-dispensacao.png";
+import { prisma } from "@/lib/prisma";
 
 const images = [
   CimFarmacia,
@@ -107,8 +104,12 @@ const getInfosFromImages = [
 
 type Props = {};
 
-const Farmacia = (props: Props) => {
-  const currentRoute = usePathname();
+const Farmacia = async (props: Props) => {
+  const allCards = await prisma.card.findMany({
+    where: {
+      category: "assistenciais/farmacia",
+    },
+  });
 
   return (
     <div className="flex max-lg:flex-col">
@@ -118,6 +119,7 @@ const Farmacia = (props: Props) => {
           {getInfosFromImages.map((images) => (
             <Cards
               id={images.id}
+              name={images.id}
               src={images.src}
               text={images.text}
               alt={images.alt}
@@ -125,11 +127,18 @@ const Farmacia = (props: Props) => {
               href={images.href}
             />
           ))}
+{/*           {allCards.map((card) => (
+            <Cards
+              id={card.id}
+              name={card.name}
+              src={card.src}
+              text={card.text}
+              alt={card.alt}
+              href={card.href}
+            />
+          ))} */}
         </div>
 
-        {/*        <div className="flex items-center justify-end  ">
-          <AddButton />
-          </div> */}
       </Main>
     </div>
   );

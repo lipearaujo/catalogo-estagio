@@ -1,14 +1,15 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+
 import { useSession } from "next-auth/react";
+import { usePathname } from "next/navigation";
+
 import { IoSearchCircleSharp } from "react-icons/io5";
+
 import ArrowButton from "./ArrowButton";
 import AddButton from "./AddButton";
 import Avatar from "./Avatar";
-import { prisma } from "@/lib/prisma";
-import { GetServerSideProps, GetStaticProps } from "next";
-import { data } from "autoprefixer";
 
 type Props = {
   title: string;
@@ -20,6 +21,7 @@ const Main = ({ children, title }: Props) => {
   const [showArrowButton, setShowArrowButton] = useState<boolean>(false);
 
   const { data: session } = useSession();
+  const currentRoute = usePathname();
 
   useEffect(() => {
     const scrollListener = () => {
@@ -79,7 +81,15 @@ const Main = ({ children, title }: Props) => {
       </div>
 
       {session && session?.user?.role === "ADMIN" ? (
-        <div className="max-2xl:static max-2xl:mt-2 fixed bottom-10">
+        <div
+          className={`${
+            currentRoute === "/" ||
+            currentRoute === "/manuais" ||
+            currentRoute === "/ajuda"
+              ? "static mt-2"
+              : "max-2xl:static max-2xl:mt-2 fixed bottom-10"
+          }`}
+        >
           <AddButton />
         </div>
       ) : (

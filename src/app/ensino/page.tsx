@@ -12,60 +12,67 @@ import GerenciaCAA from "../../../public/images/ensino/gerencia-caa.png";
 import ControleAcessoAcademicos from "../../../public/images/ensino/controle-acesso-academicos.png";
 import EscolaEbserh from "../../../public/images/ensino/escola-ebserh.png";
 import Cards from "@/components/Cards";
+import { prisma } from "@/lib/prisma";
+
+const images = [
+  PesquisaInovacao,
+  Reservas,
+  GerenciaCAA,
+  ControleAcessoAcademicos,
+  EscolaEbserh,
+];
+
+const getInfosFromImages = [
+  {
+    id: "Pesquisa e Inovação em Saúde",
+    src: images[0],
+    text: "Sistemas voltados para a pesquisa e inovação em saúde.",
+    alt: "Pesquisa e Inovação em Saúde",
+    idColor: "text-[#283593]",
+    href: 'ensino/pesquisa'
+  },
+  {
+    id: "Reservas Salas de Aula - GEP",
+    src: images[1],
+    text: "Agendas de reservas das salas de aula do Setor de Gestão do Ensino.",
+    alt: "Reservas Salas de Aula - GEP",
+    idColor: "text-[#283593]",
+    href: 'https://www.gov.br/ebserh/pt-br/hospitais-universitarios/regiao-centro-oeste/hu-ufgd/governanca/ensino-e-pesquisa/setor-de-gestao-do-ensino/area-academica/reservas-de-salas-de-aula'
+  },
+  {
+    id: "[ADM] Controle de Acesso Acadêmicos",
+    src: images[2],
+    text: "Módulo de administração do Sistema de Controle de Acesso aos Acadêmicos (CAAA) no HU-UFGD.",
+    alt: "[ADM] Controle de Acesso Acadêmicos",
+    idColor: "text-[#455A64]",
+    href: 'http://10.18.0.52/gerencia/'
+  },
+  {
+    id: "Controle de Acesso Acadêmicos",
+    src: images[3],
+    text: "Sistema de Controle de Acesso dos Acadêmicos (CAA) que realizam os estágios supervisionados nas dependências do HU-UFGD.",
+    alt: "Controle de Acesso Acadêmicos",
+    idColor: "text-[#455A64]",
+    href: 'http://10.18.0.52/'
+  },
+  {
+    id: "Escola Ebserh - Nova 3EC",
+    src: images[4],
+    text: "Plataforma de educação à distância da Escola Ebserh de Educação Corporativa - 3EC.",
+    alt: "Escola Ebserh - Nova 3EC",
+    idColor: "text-[#455A64]",
+    href: 'https://moodle.ebserh.gov.br/'
+  },
+];
 
 type Props = {};
 
-const Ensino = (props: Props) => {
-  const images = [
-    PesquisaInovacao,
-    Reservas,
-    GerenciaCAA,
-    ControleAcessoAcademicos,
-    EscolaEbserh,
-  ];
-
-  const getInfosFromImages = [
-    {
-      id: "Pesquisa e Inovação em Saúde",
-      src: images[0],
-      text: "Sistemas voltados para a pesquisa e inovação em saúde.",
-      alt: "Pesquisa e Inovação em Saúde",
-      idColor: "text-[#283593]",
-      href: 'ensino/pesquisa'
+const Ensino = async (props: Props) => {
+  const allCards = await prisma.card.findMany({
+    where: {
+      category: "ensino",
     },
-    {
-      id: "Reservas Salas de Aula - GEP",
-      src: images[1],
-      text: "Agendas de reservas das salas de aula do Setor de Gestão do Ensino.",
-      alt: "Reservas Salas de Aula - GEP",
-      idColor: "text-[#283593]",
-      href: 'https://www.gov.br/ebserh/pt-br/hospitais-universitarios/regiao-centro-oeste/hu-ufgd/governanca/ensino-e-pesquisa/setor-de-gestao-do-ensino/area-academica/reservas-de-salas-de-aula'
-    },
-    {
-      id: "[ADM] Controle de Acesso Acadêmicos",
-      src: images[2],
-      text: "Módulo de administração do Sistema de Controle de Acesso aos Acadêmicos (CAAA) no HU-UFGD.",
-      alt: "[ADM] Controle de Acesso Acadêmicos",
-      idColor: "text-[#455A64]",
-      href: 'http://10.18.0.52/gerencia/'
-    },
-    {
-      id: "Controle de Acesso Acadêmicos",
-      src: images[3],
-      text: "Sistema de Controle de Acesso dos Acadêmicos (CAA) que realizam os estágios supervisionados nas dependências do HU-UFGD.",
-      alt: "Controle de Acesso Acadêmicos",
-      idColor: "text-[#455A64]",
-      href: 'http://10.18.0.52/'
-    },
-    {
-      id: "Escola Ebserh - Nova 3EC",
-      src: images[4],
-      text: "Plataforma de educação à distância da Escola Ebserh de Educação Corporativa - 3EC.",
-      alt: "Escola Ebserh - Nova 3EC",
-      idColor: "text-[#455A64]",
-      href: 'https://moodle.ebserh.gov.br/'
-    },
-  ];
+  });
 
   return (
     <div className="flex max-lg:flex-col">
@@ -75,6 +82,7 @@ const Ensino = (props: Props) => {
           {getInfosFromImages.map((images) => (
             <Cards
               id={images.id}
+              name={images.id}
               src={images.src}
               text={images.text}
               alt={images.alt}
@@ -82,6 +90,16 @@ const Ensino = (props: Props) => {
               href={images.href}
             />
           ))}
+          {/*           {allCards.map((card) => (
+            <Cards
+              id={card.id}
+              name={card.name}
+              src={card.src}
+              text={card.text}
+              alt={card.alt}
+              href={card.href}
+            />
+          ))} */}
         </div>
       </Main>
     </div>
