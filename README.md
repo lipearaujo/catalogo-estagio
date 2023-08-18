@@ -18,17 +18,25 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Documentação
 
-To learn more about Next.js, take a look at the following resources:
+Banco de dados --> DATABASE_URL="postgresql://postgres@localhost:5432/postgres?schema=public"
+Container criado para hospedar o banco de dados PostgresSQL --> docker run --rm -p 5432:5432 -e POSTGRES_HOST_AUTH_METHOD=trust postgres
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Prisma:
+Instalar o Prisma CLI como dependência de desenvolvimento --> npm install prisma --save-dev
+Executar os pacotes do prisma --> npx prisma
+Criar e aplicar as migrations --> npx prisma migrate dev --name init
+Gera os dados definidos no prisma/schema.prisma --> npx prisma generate
+Preenche o banco de dados com um conjunto inicial de dados --> npx prisma db seed
+Criar em package.json --> "prisma": { "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts" }
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Pasta src:
+Na pasta app ficam localizadas as rotas das páginas. Cada pasta com o arquivo page.tsx indica o index de cada rota, ou seja, a página que será acessada ao navegarmos ate determinada rota.
+Em /api ficam localizadas as autenticações do usuário e as manipulações ao banco de dados.
+Em /components ficam os componentes utilizados no código.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Links úteis:
+NextJS --> https://nextjs.org/
+NextAuth --> https://next-auth.js.org/ && https://codevoweb.com/setup-and-use-nextauth-in-nextjs-13-app-directory/
+Prisma --> https://www.prisma.io/
