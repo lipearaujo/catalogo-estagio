@@ -54,9 +54,12 @@ const Main = ({ children, title }: Props) => {
         <h1 className="max-sm:text-[18px] text-[24px]">{title}</h1>
         <div className="flex gap-5 ">
           <div className="hidden md:flex relative rounded-[999px] ">
-            <form action="" className="flex justify-center items-center">
+            <form
+              onSubmit={search}
+              className="flex justify-center items-center"
+            >
               <input
-                type="text"
+                type="search"
                 name="searchLabel"
                 id="searchLabel"
                 placeholder="Pesquisar..."
@@ -64,12 +67,10 @@ const Main = ({ children, title }: Props) => {
                 onChange={getInputText}
                 className="w-[14rem] h-[40px] border-[5px] border-slate-300 outline-0 rounded-[999px] bg-slate-300 pl-3 focus:w-[18rem] focus:border-5 focus:border-slate-500 ease-in-out duration-300"
               />
-            </form>
-            <div className="text-3xl h-[30px] rounded-[999px] flex justify-center items-center absolute right-[5px] top-[5px] bg-slate-300">
-              <i onClick={search} className="cursor-pointer">
+              <button className="text-3xl h-[30px] rounded-[999px] flex justify-center items-center absolute right-[5px] top-[5px] bg-slate-300">
                 <IoSearchCircleSharp />
-              </i>
-            </div>
+              </button>
+            </form>
           </div>
           <Avatar />
         </div>
